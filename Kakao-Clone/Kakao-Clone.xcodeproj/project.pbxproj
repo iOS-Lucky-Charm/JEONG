@@ -48,6 +48,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		031D5BCF299A39B500E54F6D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				03F386712994037B003416AA /* SignIn */,
+				03F3867229940398003416AA /* SignUp */,
+				03F3867529940933003416AA /* Welcome */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		032B57A929927FE8000678D9 = {
 			isa = PBXGroup;
 			children = (
@@ -88,9 +98,7 @@
 		032B57CA29928351000678D9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				03F386712994037B003416AA /* SignIn */,
-				03F3867229940398003416AA /* SignUp */,
-				03F3867529940933003416AA /* Welcome */,
+				031D5BCF299A39B500E54F6D /* Login */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
