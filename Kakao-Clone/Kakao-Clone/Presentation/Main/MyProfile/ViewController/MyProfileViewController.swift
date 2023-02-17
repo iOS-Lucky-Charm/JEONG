@@ -21,6 +21,12 @@ final class MyProfileViewController: UIViewController {
     private let chattingMeView = UIView()
     private let editProfileView = UIView()
     private let kakaoStoryView = UIView()
+    private let chattingMeImageView = UIImageView()
+    private let editingProfileImageView = UIImageView()
+    private let kakaoStoryImageView = UIImageView()
+    private let chattingMeLabel = UILabel()
+    private let editingProfileLabel = UILabel()
+    private let kakaoStoryLabel = UILabel()
     
     // MARK: - Properties
     
@@ -67,16 +73,37 @@ extension MyProfileViewController {
             $0.backgroundColor = Color.myProfileLine
         }
         
-        chattingMeView.do {
-            $0.backgroundColor = .red
+        chattingMeImageView.do {
+            $0.image = Image.profileTalk
         }
         
-        editProfileView.do {
-            $0.backgroundColor = .black
+        chattingMeLabel.do {
+            $0.text = "나와의 채팅"
+            $0.textAlignment = .center
+            $0.textColor = .white
+            $0.font = .systemFont(ofSize: 10, weight: .regular)
         }
         
-        kakaoStoryView.do {
-            $0.backgroundColor = .gray
+        editingProfileImageView.do {
+            $0.image = Image.profileEditing
+        }
+        
+        editingProfileLabel.do {
+            $0.text = "나와의 채팅"
+            $0.textAlignment = .center
+            $0.textColor = .white
+            $0.font = .systemFont(ofSize: 10, weight: .regular)
+        }
+        
+        kakaoStoryImageView.do {
+            $0.image = Image.profileStory
+        }
+        
+        kakaoStoryLabel.do {
+            $0.text = "나와의 채팅"
+            $0.textAlignment = .center
+            $0.textColor = .white
+            $0.font = .systemFont(ofSize: 10, weight: .regular)
         }
     }
     
@@ -84,6 +111,9 @@ extension MyProfileViewController {
     
     private func setLayout() {
         
+        chattingMeView.addSubviews(chattingMeImageView, chattingMeLabel)
+        editProfileView.addSubviews(editingProfileImageView, editingProfileLabel)
+        kakaoStoryView.addSubviews(kakaoStoryImageView, kakaoStoryLabel)
         view.addSubviews(myProfileImageView, myProfileNameLabel, myProfileLineView,
                          chattingMeView, editProfileView, kakaoStoryView, myProfileCloseButton)
         
@@ -100,6 +130,17 @@ extension MyProfileViewController {
             $0.height.equalTo(72)
         }
         
+        editingProfileImageView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(22)
+            $0.centerX.equalToSuperview()
+            $0.width.height.equalTo(18)
+        }
+        
+        editingProfileLabel.snp.makeConstraints {
+            $0.top.equalTo(editingProfileImageView.snp.bottom).offset(8)
+            $0.centerX.equalToSuperview()
+        }
+        
         chattingMeView.snp.makeConstraints {
             $0.bottom.equalTo(editProfileView)
             $0.trailing.equalTo(editProfileView.snp.leading)
@@ -107,11 +148,33 @@ extension MyProfileViewController {
             $0.height.equalTo(72)
         }
         
+        chattingMeImageView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(22)
+            $0.centerX.equalToSuperview()
+            $0.width.height.equalTo(18)
+        }
+        
+        chattingMeLabel.snp.makeConstraints {
+            $0.top.equalTo(chattingMeImageView.snp.bottom).offset(8)
+            $0.centerX.equalToSuperview()
+        }
+        
         kakaoStoryView.snp.makeConstraints {
             $0.bottom.equalTo(editProfileView)
             $0.leading.equalTo(editProfileView.snp.trailing)
             $0.width.equalTo(92)
             $0.height.equalTo(72)
+        }
+        
+        kakaoStoryImageView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(22)
+            $0.centerX.equalToSuperview()
+            $0.width.height.equalTo(18)
+        }
+        
+        kakaoStoryLabel.snp.makeConstraints {
+            $0.top.equalTo(kakaoStoryImageView.snp.bottom).offset(8)
+            $0.centerX.equalToSuperview()
         }
         
         myProfileLineView.snp.makeConstraints {
