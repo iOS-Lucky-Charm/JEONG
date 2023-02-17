@@ -23,7 +23,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: windowScene)
             window.overrideUserInterfaceStyle = UIUserInterfaceStyle.light
             
-            let rootVC = SignInViewController()
+//            let rootVC = SignInViewController()
+            let rootVC = FriendViewController()
             let navigationController = UINavigationController(rootViewController: rootVC)
 //            navigationController.isNavigationBarHidden = true
             window.rootViewController = navigationController
