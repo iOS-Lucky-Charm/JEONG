@@ -23,6 +23,7 @@
 		03B7D5D5299FA43B00D31B56 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B7D5D4299FA43B00D31B56 /* Image.swift */; };
 		03B7D5D9299FAEAC00D31B56 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03B7D5D8299FAEAC00D31B56 /* Color.xcassets */; };
 		03B7D5DB299FB0B200D31B56 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B7D5DA299FB0B200D31B56 /* Color.swift */; };
+		03B7D5DF299FBB1300D31B56 /* MyProfileTouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B7D5DE299FBB1300D31B56 /* MyProfileTouchView.swift */; };
 		03F38674299403DC003416AA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F38673299403DC003416AA /* SignUpViewController.swift */; };
 		03F386772994095E003416AA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F386762994095E003416AA /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 		03B7D5D4299FA43B00D31B56 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		03B7D5D8299FAEAC00D31B56 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		03B7D5DA299FB0B200D31B56 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		03B7D5DE299FBB1300D31B56 /* MyProfileTouchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileTouchView.swift; sourceTree = "<group>"; };
 		03F38673299403DC003416AA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		03F386762994095E003416AA /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,9 +191,26 @@
 		03B7D5D6299FAB1300D31B56 /* MyProfile */ = {
 			isa = PBXGroup;
 			children = (
-				031D5BD5299A424100E54F6D /* MyProfileViewController.swift */,
+				03B7D5DC299FBABB00D31B56 /* ViewController */,
+				03B7D5DD299FBAC900D31B56 /* View */,
 			);
 			path = MyProfile;
+			sourceTree = "<group>";
+		};
+		03B7D5DC299FBABB00D31B56 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				031D5BD5299A424100E54F6D /* MyProfileViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		03B7D5DD299FBAC900D31B56 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				03B7D5DE299FBB1300D31B56 /* MyProfileTouchView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		03F386712994037B003416AA /* SignIn */ = {
@@ -304,6 +323,7 @@
 				032B57BA29927FE8000678D9 /* SignInViewController.swift in Sources */,
 				03B7D5DB299FB0B200D31B56 /* Color.swift in Sources */,
 				032B57D629928AA7000678D9 /* UIView +.swift in Sources */,
+				03B7D5DF299FBB1300D31B56 /* MyProfileTouchView.swift in Sources */,
 				031D5BD6299A424100E54F6D /* MyProfileViewController.swift in Sources */,
 				032B57DA29929D2B000678D9 /* SignInTextFieldView.swift in Sources */,
 				031D5BD4299A41FA00E54F6D /* FriendViewController.swift in Sources */,

@@ -16,7 +16,7 @@ final class FriendViewController: UIViewController {
     
     private let friendLabel = UILabel()
     private let settingImageView = UIImageView()
-    private let myProfileImageView = UIImageView()
+    private let myProfileImageButton = UIButton()
     
     // MARK: - Properties
     
@@ -52,8 +52,9 @@ extension FriendViewController {
             $0.image = Image.settingIcon
         }
         
-        myProfileImageView.do {
-            $0.image = Image.profileImage
+        myProfileImageButton.do {
+            $0.setImage(Image.profileImage, for: .normal)
+            $0.addTarget(self, action: #selector(myProfileDidTap), for: .touchUpInside)
         }
     }
     
@@ -61,7 +62,7 @@ extension FriendViewController {
     
     private func setLayout() {
         
-        view.addSubviews(friendLabel, settingImageView, myProfileImageView)
+        view.addSubviews(friendLabel, settingImageView, myProfileImageButton)
         
         friendLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(12)
@@ -74,7 +75,7 @@ extension FriendViewController {
             $0.width.height.equalTo(21)
         }
         
-        myProfileImageView.snp.makeConstraints {
+        myProfileImageButton.snp.makeConstraints {
             $0.top.equalTo(friendLabel.snp.bottom).offset(26)
             $0.leading.equalTo(view.safeAreaLayoutGuide).offset(14)
             $0.width.equalTo(59)
@@ -84,5 +85,15 @@ extension FriendViewController {
     
     // MARK: - Methods
     
+    private func presentToMyProfileVC() {
+        let myProfileVC = MyProfileViewController()
+        myProfileVC.modalPresentationStyle = .fullScreen
+        self.present(myProfileVC, animated: true, completion: nil)
+    }
+    
     // MARK: - @objc Methods
+
+    @objc private func myProfileDidTap() {
+        presentToMyProfileVC()
+    }
 }

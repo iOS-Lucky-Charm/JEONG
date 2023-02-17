@@ -19,5 +19,6 @@ public enum Image {
     public static let profileEditing = UIImage(named: "profileEditImg")!
     public static let profileStory = UIImage(named: "profileStoryImg")!
     public static let profileTalk = UIImage(named: "profileTalkImg")!
+    public static let profileClose = UIImage(named: "profile_closeBtn")!
     
 }
