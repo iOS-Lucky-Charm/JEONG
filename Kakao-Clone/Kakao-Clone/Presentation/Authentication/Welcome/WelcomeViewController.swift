@@ -80,9 +80,17 @@ extension WelcomeViewController {
         userNameLabel.text = "\(userName)님\n환영합니다"
     }
     
+    private func moveToFriendVC() {
+        let mainVC = FriendViewController()
+        let navigationController = UINavigationController(rootViewController: mainVC)
+        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
+        sceneDelegate.window?.rootViewController = navigationController
+    }
+    
     // MARK: - @objc Methods
     
     @objc private func checkButtonDidTap() {
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        moveToFriendVC()
     }
 }
