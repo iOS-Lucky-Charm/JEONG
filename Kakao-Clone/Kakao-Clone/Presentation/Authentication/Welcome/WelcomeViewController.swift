@@ -75,7 +75,8 @@ extension WelcomeViewController {
     
     // MARK: - Methods
     
-    func setDataBind(userName: String) {
+    func setDataBind() {
+        guard let userName = self.userName else { return }
         userNameLabel.text = "\(userName)님\n환영합니다"
     }
     
@@ -83,6 +84,7 @@ extension WelcomeViewController {
         let mainVC = FriendViewController()
         let navigationController = UINavigationController(rootViewController: mainVC)
         let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
+        mainVC.userName = userName
         sceneDelegate.window?.rootViewController = navigationController
     }
     

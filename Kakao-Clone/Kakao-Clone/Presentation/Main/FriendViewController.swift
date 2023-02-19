@@ -20,6 +20,8 @@ final class FriendViewController: UIViewController {
     
     // MARK: - Properties
     
+    var userName: String?
+    
     // MARK: - Initializer
     
     // MARK: - View Life Cycle
@@ -87,9 +89,9 @@ extension FriendViewController {
     
     private func presentToMyProfileVC() {
         let myProfileVC = MyProfileViewController()
-        myProfileVC.modalPresentationStyle = .fullScreen
-//        myProfileVC.userName = userNameValue()
+        myProfileVC.userName = userName
         myProfileVC.setDataBind()
+        myProfileVC.modalPresentationStyle = .fullScreen
         self.present(myProfileVC, animated: true, completion: nil)
     }
     

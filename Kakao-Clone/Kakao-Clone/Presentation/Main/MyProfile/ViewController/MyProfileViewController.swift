@@ -65,6 +65,7 @@ extension MyProfileViewController {
         }
         
         myProfileNameLabel.do {
+            $0.text = userName
             $0.textAlignment = .center
             $0.font = .systemFont(ofSize: 18, weight: .regular)
             $0.textColor = .white

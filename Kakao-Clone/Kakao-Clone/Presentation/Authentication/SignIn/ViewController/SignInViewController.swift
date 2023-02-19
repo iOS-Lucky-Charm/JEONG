@@ -131,8 +131,8 @@ extension SignInViewController {
     private func presentToWelcomeVC() {
         let welcomeVC = WelcomeViewController()
         welcomeVC.modalPresentationStyle = .formSheet
-//        let userName = emailTextField.passTextFieldValue()
-//        welcomeVC.setDataBind(userName: emailTextField.passTextFieldValue())
+        welcomeVC.userName = emailTextField.passTextFieldValue()
+        welcomeVC.setDataBind()
         self.present(welcomeVC, animated: true, completion: nil)
     }
     
