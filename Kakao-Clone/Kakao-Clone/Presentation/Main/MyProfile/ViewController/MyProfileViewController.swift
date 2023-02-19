@@ -30,6 +30,8 @@ final class MyProfileViewController: UIViewController {
     
     // MARK: - Properties
     
+    var userName: String?
+    
     // MARK: - Initializer
     
     // MARK: - View Life Cycle
@@ -63,10 +65,10 @@ extension MyProfileViewController {
         }
         
         myProfileNameLabel.do {
-            $0.text = "권정"
             $0.textAlignment = .center
             $0.font = .systemFont(ofSize: 18, weight: .regular)
             $0.textColor = .white
+            $0.numberOfLines = 2
         }
         
         myProfileLineView.do {
@@ -178,18 +180,18 @@ extension MyProfileViewController {
         }
         
         myProfileLineView.snp.makeConstraints {
-            $0.bottom.equalTo(editProfileView.snp.top).offset(-11)
+            $0.bottom.equalTo(editProfileView.snp.top).inset(-11)
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.height.equalTo(1)
         }
         
         myProfileNameLabel.snp.makeConstraints {
-            $0.bottom.equalTo(myProfileLineView.snp.top).offset(-42)
+            $0.bottom.equalTo(myProfileLineView.snp.top).inset(-42)
             $0.centerX.equalToSuperview()
         }
         
         myProfileImageView.snp.makeConstraints {
-            $0.bottom.equalTo(myProfileNameLabel.snp.top).offset(-8)
+            $0.bottom.equalTo(myProfileNameLabel.snp.top).inset(-8)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(97)
             $0.height.equalTo(96)
@@ -200,6 +202,12 @@ extension MyProfileViewController {
     
     private func dismissToFriendVC() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func setDataBind() {
+        guard let userName = self.userName else { return }
+        myProfileNameLabel.text = userName
+        print(userName)
     }
     
     // MARK: - @objc Methods

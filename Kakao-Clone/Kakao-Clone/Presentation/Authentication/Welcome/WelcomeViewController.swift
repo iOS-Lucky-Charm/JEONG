@@ -75,8 +75,7 @@ extension WelcomeViewController {
     
     // MARK: - Methods
     
-    func setDataBind() {
-        guard let userName = self.userName else { return }
+    func setDataBind(userName: String) {
         userNameLabel.text = "\(userName)님\n환영합니다"
     }
     
@@ -90,7 +89,6 @@ extension WelcomeViewController {
     // MARK: - @objc Methods
     
     @objc private func checkButtonDidTap() {
-//        self.dismiss(animated: true, completion: nil)
         moveToFriendVC()
     }
 }

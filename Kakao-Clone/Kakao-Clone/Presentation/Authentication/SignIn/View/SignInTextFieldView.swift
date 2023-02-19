@@ -42,7 +42,7 @@ extension SignInTextFieldView {
     
     // MARK: - UIComponents Propertys
     
-    func setUI() {
+    private func setUI() {
         backgroundColor = .clear
         
         signTextField.do {
@@ -83,7 +83,7 @@ extension SignInTextFieldView {
         return text
     }
     
-    func setDelegate() {
+    private func setDelegate() {
         signTextField.delegate = self
     }
 }

@@ -88,6 +88,8 @@ extension FriendViewController {
     private func presentToMyProfileVC() {
         let myProfileVC = MyProfileViewController()
         myProfileVC.modalPresentationStyle = .fullScreen
+//        myProfileVC.userName = userNameValue()
+        myProfileVC.setDataBind()
         self.present(myProfileVC, animated: true, completion: nil)
     }
     
