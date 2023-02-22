@@ -91,6 +91,24 @@ extension SignInTextFieldView {
 extension SignInTextFieldView: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-            signTextField.textColor = .black
+        signTextField.textColor = .black
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        underLineView.backgroundColor = .black
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        underLineView.backgroundColor = .black
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        let text = signTextField.text
+        if text == "" {
+            underLineView.backgroundColor = .systemGray3
+        }
+        return true
     }
 }
