@@ -20,13 +20,24 @@ class KakaoTabbarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setTabBarItems()
+        setTabBarUI()
     }
 }
 
 extension KakaoTabbarViewController {
     
     private func setTabBarItems() {
-        
+        tabs = [
+            FriendViewController(),
+            ChattingViewController(),
+            SharpViewController(),
+            ShopViewController(),
+            SettingViewController()
+        ]
+    }
+    
+    private func setTabBarUI() {
+
     }
 }
