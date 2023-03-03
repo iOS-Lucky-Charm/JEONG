@@ -34,4 +34,8 @@ public enum Image {
     public static let setting = UIImage(named: "iconTabMoreUnfilled")!
     public static let selectedSetting = UIImage(named: "iconTabMoreFilled")!
     
+    // MARK: - FriendTabImage
+    
+    public static let friendImage1 = UIImage(named: "profileImage1")!
+    
 }

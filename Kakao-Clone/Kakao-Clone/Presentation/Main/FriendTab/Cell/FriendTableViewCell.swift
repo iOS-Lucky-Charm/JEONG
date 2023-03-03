@@ -75,8 +75,10 @@ extension FriendTableViewCell {
     
     // MARK: - Methods
     
-    func setDataBind() {
-        
+    func setDataBind(model: FriendListModel) {
+        friendListProfile.image = model.friendProfile
+        friendListName.text = model.friendName
+        friendListStatusMessage.text = model.friendStatusMessage
     }
 }
 
