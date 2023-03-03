@@ -19,6 +19,8 @@
 		032B57D629928AA7000678D9 /* UIView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B57D529928AA7000678D9 /* UIView +.swift */; };
 		032B57D829929266000678D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 032B57D729929266000678D9 /* Main.storyboard */; };
 		032B57DA29929D2B000678D9 /* SignInTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B57D929929D2B000678D9 /* SignInTextFieldView.swift */; };
+		03A1C87A29A3841A00E8428B /* UIButton +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1C87929A3841A00E8428B /* UIButton +.swift */; };
+		03A1C87D29A3A09400E8428B /* ProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1C87C29A3A09400E8428B /* ProfileButton.swift */; };
 		03B7D5D2299FA30600D31B56 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03B7D5D1299FA30600D31B56 /* Image.xcassets */; };
 		03B7D5D5299FA43B00D31B56 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B7D5D4299FA43B00D31B56 /* Image.swift */; };
 		03B7D5D9299FAEAC00D31B56 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03B7D5D8299FAEAC00D31B56 /* Color.xcassets */; };
@@ -39,6 +41,8 @@
 		032B57D529928AA7000678D9 /* UIView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView +.swift"; sourceTree = "<group>"; };
 		032B57D729929266000678D9 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		032B57D929929D2B000678D9 /* SignInTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTextFieldView.swift; sourceTree = "<group>"; };
+		03A1C87929A3841A00E8428B /* UIButton +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton +.swift"; sourceTree = "<group>"; };
+		03A1C87C29A3A09400E8428B /* ProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButton.swift; sourceTree = "<group>"; };
 		03B7D5D1299FA30600D31B56 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		03B7D5D4299FA43B00D31B56 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		03B7D5D8299FAEAC00D31B56 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 		032B57D129928A2C000678D9 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				03A1C87E29A3A65500E8428B /* CustomClass */,
 				032B57D429928A8D000678D9 /* Extension */,
 				03B7D5D3299FA40C00D31B56 /* NameSpace */,
 			);
@@ -173,8 +178,17 @@
 			isa = PBXGroup;
 			children = (
 				032B57D529928AA7000678D9 /* UIView +.swift */,
+				03A1C87929A3841A00E8428B /* UIButton +.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		03A1C87E29A3A65500E8428B /* CustomClass */ = {
+			isa = PBXGroup;
+			children = (
+				03A1C87C29A3A09400E8428B /* ProfileButton.swift */,
+			);
+			path = CustomClass;
 			sourceTree = "<group>";
 		};
 		03B7D5D3299FA40C00D31B56 /* NameSpace */ = {
@@ -309,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03F38674299403DC003416AA /* SignUpViewController.swift in Sources */,
+				03A1C87D29A3A09400E8428B /* ProfileButton.swift in Sources */,
 				032B57BA29927FE8000678D9 /* SignInViewController.swift in Sources */,
 				03B7D5DB299FB0B200D31B56 /* Color.swift in Sources */,
 				032B57D629928AA7000678D9 /* UIView +.swift in Sources */,
@@ -316,6 +331,7 @@
 				032B57DA29929D2B000678D9 /* SignInTextFieldView.swift in Sources */,
 				031D5BD4299A41FA00E54F6D /* FriendViewController.swift in Sources */,
 				032B57B629927FE8000678D9 /* AppDelegate.swift in Sources */,
+				03A1C87A29A3841A00E8428B /* UIButton +.swift in Sources */,
 				032B57B829927FE8000678D9 /* SceneDelegate.swift in Sources */,
 				03F386772994095E003416AA /* WelcomeViewController.swift in Sources */,
 				03B7D5D5299FA43B00D31B56 /* Image.swift in Sources */,

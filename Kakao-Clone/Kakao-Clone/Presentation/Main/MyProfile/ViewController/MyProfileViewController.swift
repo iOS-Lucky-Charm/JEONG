@@ -18,24 +18,19 @@ final class MyProfileViewController: UIViewController {
     private let myProfileImageView = UIImageView()
     private let myProfileNameLabel = UILabel()
     private let myProfileLineView = UIView()
-    private let chattingMeView = UIView()
-    private let editProfileView = UIView()
-    private let kakaoStoryView = UIView()
-    private let chattingMeImageView = UIImageView()
-    private let editingProfileImageView = UIImageView()
-    private let kakaoStoryImageView = UIImageView()
-    private let chattingMeLabel = UILabel()
-    private let editingProfileLabel = UILabel()
-    private let kakaoStoryLabel = UILabel()
+    
+    private let chattingMeButton = ProfileButton(buttonName: "나와의 채팅", buttonImage: Image.profileTalk)
+    private let editProfileButton = ProfileButton(buttonName: "프로필 편집", buttonImage: Image.profileEditing)
+    private let kakaoStoryButton = ProfileButton(buttonName: "카카오스토리", buttonImage: Image.profileStory)
     
     // MARK: - Properties
     
-    // MARK: - Initializer
+    var userName: String?
     
     // MARK: - View Life Cycle
     
     override func viewWillAppear(_ animated: Bool) {
-      navigationController?.isNavigationBarHidden = true // 뷰 컨트롤러가 나타날 때 숨기기
+      navigationController?.isNavigationBarHidden = true
     }
     
     override func viewDidLoad() {
@@ -63,47 +58,15 @@ extension MyProfileViewController {
         }
         
         myProfileNameLabel.do {
-            $0.text = "권정"
+            $0.text = userName
             $0.textAlignment = .center
             $0.font = .systemFont(ofSize: 18, weight: .regular)
             $0.textColor = .white
+            $0.numberOfLines = 2
         }
         
         myProfileLineView.do {
             $0.backgroundColor = Color.myProfileLine
-        }
-        
-        chattingMeImageView.do {
-            $0.image = Image.profileTalk
-        }
-        
-        chattingMeLabel.do {
-            $0.text = "나와의 채팅"
-            $0.textAlignment = .center
-            $0.textColor = .white
-            $0.font = .systemFont(ofSize: 10, weight: .regular)
-        }
-        
-        editingProfileImageView.do {
-            $0.image = Image.profileEditing
-        }
-        
-        editingProfileLabel.do {
-            $0.text = "나와의 채팅"
-            $0.textAlignment = .center
-            $0.textColor = .white
-            $0.font = .systemFont(ofSize: 10, weight: .regular)
-        }
-        
-        kakaoStoryImageView.do {
-            $0.image = Image.profileStory
-        }
-        
-        kakaoStoryLabel.do {
-            $0.text = "나와의 채팅"
-            $0.textAlignment = .center
-            $0.textColor = .white
-            $0.font = .systemFont(ofSize: 10, weight: .regular)
         }
     }
     
@@ -111,11 +74,8 @@ extension MyProfileViewController {
     
     private func setLayout() {
         
-        chattingMeView.addSubviews(chattingMeImageView, chattingMeLabel)
-        editProfileView.addSubviews(editingProfileImageView, editingProfileLabel)
-        kakaoStoryView.addSubviews(kakaoStoryImageView, kakaoStoryLabel)
-        view.addSubviews(myProfileImageView, myProfileNameLabel, myProfileLineView,
-                         chattingMeView, editProfileView, kakaoStoryView, myProfileCloseButton)
+        view.addSubviews(myProfileCloseButton, myProfileImageView, myProfileNameLabel,
+                         myProfileLineView, chattingMeButton, editProfileButton, kakaoStoryButton)
         
         myProfileCloseButton.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(14)
@@ -123,73 +83,40 @@ extension MyProfileViewController {
             $0.width.height.equalTo(14)
         }
         
-        editProfileView.snp.makeConstraints {
+        editProfileButton.snp.makeConstraints {
             $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(48)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(92)
             $0.height.equalTo(72)
         }
         
-        editingProfileImageView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(22)
-            $0.centerX.equalToSuperview()
-            $0.width.height.equalTo(18)
-        }
-        
-        editingProfileLabel.snp.makeConstraints {
-            $0.top.equalTo(editingProfileImageView.snp.bottom).offset(8)
-            $0.centerX.equalToSuperview()
-        }
-        
-        chattingMeView.snp.makeConstraints {
-            $0.bottom.equalTo(editProfileView)
-            $0.trailing.equalTo(editProfileView.snp.leading)
+        chattingMeButton.snp.makeConstraints {
+            $0.bottom.equalTo(editProfileButton)
+            $0.trailing.equalTo(editProfileButton.snp.leading)
             $0.width.equalTo(92)
             $0.height.equalTo(72)
         }
         
-        chattingMeImageView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(22)
-            $0.centerX.equalToSuperview()
-            $0.width.height.equalTo(18)
-        }
-        
-        chattingMeLabel.snp.makeConstraints {
-            $0.top.equalTo(chattingMeImageView.snp.bottom).offset(8)
-            $0.centerX.equalToSuperview()
-        }
-        
-        kakaoStoryView.snp.makeConstraints {
-            $0.bottom.equalTo(editProfileView)
-            $0.leading.equalTo(editProfileView.snp.trailing)
+        kakaoStoryButton.snp.makeConstraints {
+            $0.bottom.equalTo(editProfileButton)
+            $0.leading.equalTo(editProfileButton.snp.trailing)
             $0.width.equalTo(92)
             $0.height.equalTo(72)
-        }
-        
-        kakaoStoryImageView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(22)
-            $0.centerX.equalToSuperview()
-            $0.width.height.equalTo(18)
-        }
-        
-        kakaoStoryLabel.snp.makeConstraints {
-            $0.top.equalTo(kakaoStoryImageView.snp.bottom).offset(8)
-            $0.centerX.equalToSuperview()
         }
         
         myProfileLineView.snp.makeConstraints {
-            $0.bottom.equalTo(editProfileView.snp.top).offset(-11)
+            $0.bottom.equalTo(editProfileButton.snp.top).inset(-11)
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.height.equalTo(1)
         }
         
         myProfileNameLabel.snp.makeConstraints {
-            $0.bottom.equalTo(myProfileLineView.snp.top).offset(-42)
+            $0.bottom.equalTo(myProfileLineView.snp.top).inset(-42)
             $0.centerX.equalToSuperview()
         }
         
         myProfileImageView.snp.makeConstraints {
-            $0.bottom.equalTo(myProfileNameLabel.snp.top).offset(-8)
+            $0.bottom.equalTo(myProfileNameLabel.snp.top).inset(-8)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(97)
             $0.height.equalTo(96)
@@ -200,6 +127,12 @@ extension MyProfileViewController {
     
     private func dismissToFriendVC() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func setDataBind() {
+        guard let userName = self.userName else { return }
+        myProfileNameLabel.text = userName
+        print(userName)
     }
     
     // MARK: - @objc Methods

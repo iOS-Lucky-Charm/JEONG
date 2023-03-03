@@ -84,13 +84,13 @@ extension WelcomeViewController {
         let mainVC = FriendViewController()
         let navigationController = UINavigationController(rootViewController: mainVC)
         let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
+        mainVC.userName = userName
         sceneDelegate.window?.rootViewController = navigationController
     }
     
     // MARK: - @objc Methods
     
     @objc private func checkButtonDidTap() {
-//        self.dismiss(animated: true, completion: nil)
         moveToFriendVC()
     }
 }
