@@ -24,13 +24,14 @@
 		037E20ED29B102E5005327CA /* SharpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20EC29B102E5005327CA /* SharpViewController.swift */; };
 		037E20EF29B102ED005327CA /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20EE29B102ED005327CA /* ShopViewController.swift */; };
 		037E20F129B102F7005327CA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20F029B102F7005327CA /* SettingViewController.swift */; };
-		037E20F729B20899005327CA /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20F629B20899005327CA /* FriendView.swift */; };
 		037E20FA29B208CD005327CA /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20F929B208CD005327CA /* FriendTableViewCell.swift */; };
 		037E20FC29B21681005327CA /* UICollectionView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20FB29B21681005327CA /* UICollectionView +.swift */; };
 		037E20FE29B21699005327CA /* UITableView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20FD29B21699005327CA /* UITableView +.swift */; };
 		037E210029B21727005327CA /* NSObject +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20FF29B21727005327CA /* NSObject +.swift */; };
 		037E210429B21953005327CA /* FriendListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E210329B21953005327CA /* FriendListModel.swift */; };
 		037E210629B22872005327CA /* FriendHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E210529B22872005327CA /* FriendHeaderView.swift */; };
+		037E210829B24B29005327CA /* ChattingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E210729B24B29005327CA /* ChattingModel.swift */; };
+		037E210D29B24C45005327CA /* ChattingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E210C29B24C45005327CA /* ChattingTableViewCell.swift */; };
 		03A1C87A29A3841A00E8428B /* UIButton +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1C87929A3841A00E8428B /* UIButton +.swift */; };
 		03A1C87D29A3A09400E8428B /* ProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1C87C29A3A09400E8428B /* ProfileButton.swift */; };
 		03B7D5D2299FA30600D31B56 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03B7D5D1299FA30600D31B56 /* Image.xcassets */; };
@@ -58,13 +59,14 @@
 		037E20EC29B102E5005327CA /* SharpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharpViewController.swift; sourceTree = "<group>"; };
 		037E20EE29B102ED005327CA /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		037E20F029B102F7005327CA /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		037E20F629B20899005327CA /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
 		037E20F929B208CD005327CA /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		037E20FB29B21681005327CA /* UICollectionView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView +.swift"; sourceTree = "<group>"; };
 		037E20FD29B21699005327CA /* UITableView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView +.swift"; sourceTree = "<group>"; };
 		037E20FF29B21727005327CA /* NSObject +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject +.swift"; sourceTree = "<group>"; };
 		037E210329B21953005327CA /* FriendListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListModel.swift; sourceTree = "<group>"; };
 		037E210529B22872005327CA /* FriendHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendHeaderView.swift; sourceTree = "<group>"; };
+		037E210729B24B29005327CA /* ChattingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingModel.swift; sourceTree = "<group>"; };
+		037E210C29B24C45005327CA /* ChattingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingTableViewCell.swift; sourceTree = "<group>"; };
 		03A1C87929A3841A00E8428B /* UIButton +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton +.swift"; sourceTree = "<group>"; };
 		03A1C87C29A3A09400E8428B /* ProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButton.swift; sourceTree = "<group>"; };
 		03B7D5D1299FA30600D31B56 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
@@ -237,7 +239,9 @@
 		037E20E529B101A0005327CA /* ChatTab */ = {
 			isa = PBXGroup;
 			children = (
-				037E20EA29B102DB005327CA /* ChattingViewController.swift */,
+				037E210929B24C12005327CA /* View */,
+				037E210A29B24C19005327CA /* ViewController */,
+				037E210B29B24C20005327CA /* Cell */,
 			);
 			path = ChatTab;
 			sourceTree = "<group>";
@@ -277,7 +281,6 @@
 		037E20F429B1FC8C005327CA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				037E20F629B20899005327CA /* FriendView.swift */,
 				037E210529B22872005327CA /* FriendHeaderView.swift */,
 			);
 			path = View;
@@ -295,8 +298,32 @@
 			isa = PBXGroup;
 			children = (
 				037E210329B21953005327CA /* FriendListModel.swift */,
+				037E210729B24B29005327CA /* ChattingModel.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		037E210929B24C12005327CA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		037E210A29B24C19005327CA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				037E20EA29B102DB005327CA /* ChattingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		037E210B29B24C20005327CA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				037E210C29B24C45005327CA /* ChattingTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		03A1C87E29A3A65500E8428B /* CustomClass */ = {
@@ -453,13 +480,14 @@
 				037E20EB29B102DB005327CA /* ChattingViewController.swift in Sources */,
 				031D5BD6299A424100E54F6D /* MyProfileViewController.swift in Sources */,
 				037E210629B22872005327CA /* FriendHeaderView.swift in Sources */,
+				037E210829B24B29005327CA /* ChattingModel.swift in Sources */,
 				032B57DA29929D2B000678D9 /* SignInTextFieldView.swift in Sources */,
 				031D5BD4299A41FA00E54F6D /* FriendViewController.swift in Sources */,
 				032B57B629927FE8000678D9 /* AppDelegate.swift in Sources */,
+				037E210D29B24C45005327CA /* ChattingTableViewCell.swift in Sources */,
 				03A1C87A29A3841A00E8428B /* UIButton +.swift in Sources */,
 				032B57B829927FE8000678D9 /* SceneDelegate.swift in Sources */,
 				03F386772994095E003416AA /* WelcomeViewController.swift in Sources */,
-				037E20F729B20899005327CA /* FriendView.swift in Sources */,
 				037E210429B21953005327CA /* FriendListModel.swift in Sources */,
 				037E20FE29B21699005327CA /* UITableView +.swift in Sources */,
 				03B7D5D5299FA43B00D31B56 /* Image.swift in Sources */,
