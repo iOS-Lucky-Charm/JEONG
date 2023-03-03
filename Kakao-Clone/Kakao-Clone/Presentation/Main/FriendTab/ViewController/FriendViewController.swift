@@ -55,32 +55,20 @@ extension FriendViewController {
             $0.image = Image.settingIcon
         }
         
-        myProfileHeaderView.do {
-            $0.backgroundColor = .white
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            $0.register(FriendViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: FriendViewHeaderFooterView.identifier)
-        }
-        
         friendTableView.do {
             $0.backgroundColor = .white
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.separatorStyle = .none
             $0.registerCell(FriendTableViewCell.self)
+            $0.register(FriendHeaderView.self, forHeaderFooterViewReuseIdentifier: FriendHeaderView.identifier)
         }
-    }
-    
-    // MARK: - Methods
-    
-    private func setDelegate() {
-        friendTableView.delegate = self
-        friendTableView.dataSource = self
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
         
-        view.addSubviews(friendLabel, settingImageView, myProfileHeaderView, friendTableView)
+        view.addSubviews(friendLabel, settingImageView, friendTableView)
         
         friendLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(12)
@@ -93,35 +81,33 @@ extension FriendViewController {
             $0.width.height.equalTo(21)
         }
         
-        myProfileHeaderView.snp.makeConstraints {
-            $0.top.equalTo(friendLabel.snp.bottom).offset(16)
-            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-        }
-        
         friendTableView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(124)
+            $0.top.equalTo(friendLabel.snp.bottom).offset(16)
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.bottom.equalToSuperview()
         }
+    }
+    
+    // MARK: - Methods
+    
+    private func setDelegate() {
+        friendTableView.delegate = self
+        friendTableView.dataSource = self
+    }
+    
+    func presentToMyProfileVC() {
+        let myProfileVC = MyProfileViewController()
+        myProfileVC.userName = userName
+        myProfileVC.setDataBind()
+        myProfileVC.modalPresentationStyle = .fullScreen
+        self.present(myProfileVC, animated: true)
     }
 }
 
 // MARK: - UITableViewDataSource
 
 extension FriendViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: FriendViewHeaderFooterView.identifier) as? FriendViewHeaderFooterView else {
-            return UIView()
-        }
 
-        return headerView
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 73
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return friendListModel.count
     }
@@ -137,6 +123,15 @@ extension FriendViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension FriendViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: FriendHeaderView.identifier) as? FriendHeaderView else { return UIView() }
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 73
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50

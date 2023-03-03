@@ -10,9 +10,9 @@ import UIKit
 import SnapKit
 import Then
 
-class FriendViewHeaderFooterView: UITableViewHeaderFooterView {
+class FriendHeaderView: UITableViewHeaderFooterView {
     
-    static let identifier = "FriendViewHeaderFooterView"
+    static let identifier = "FriendHeaderView"
 
     // MARK: - UI Components
     
@@ -26,8 +26,10 @@ class FriendViewHeaderFooterView: UITableViewHeaderFooterView {
     
     // MARK: - Initializer
 
-    override init( reuseIdentifier: String?) {
+    override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
+        setUI()
+        setLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -35,12 +37,12 @@ class FriendViewHeaderFooterView: UITableViewHeaderFooterView {
     }
 }
 
-extension FriendViewHeaderFooterView {
+extension FriendHeaderView {
     
     // MARK: - UI Components Property
     
     private func setUI() {
-        backgroundColor = .white
+        backgroundColor = .black
         
         myProfileImageButton.do {
             $0.setImage(Image.profileImage, for: .normal)
@@ -50,7 +52,7 @@ extension FriendViewHeaderFooterView {
         myProfileName.do {
             $0.text = "권정"
             $0.textColor = .black
-            $0.font = .systemFont(ofSize: 22, weight: .semibold)
+            $0.font = .systemFont(ofSize: 16, weight: .semibold)
         }
         
         myProfileStatusMessage.do {
@@ -66,7 +68,7 @@ extension FriendViewHeaderFooterView {
         addSubviews(myProfileImageButton, myProfileName, myProfileStatusMessage)
         
         myProfileImageButton.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
+            $0.top.equalToSuperview().offset(7)
             $0.leading.equalToSuperview().offset(16)
             $0.width.height.equalTo(59)
         }
@@ -84,17 +86,18 @@ extension FriendViewHeaderFooterView {
     
     // MARK: - Methods
     
-    private func presentToMyProfileVC() {
-        let myProfileVC = MyProfileViewController()
-        myProfileVC.userName = userName
-        myProfileVC.setDataBind()
-        myProfileVC.modalPresentationStyle = .fullScreen
-        self.present(myProfileVC, animated: true, completion: nil)
-    }
+//    private func presentToMyProfileVC() {
+//        let myProfileVC = MyProfileViewController()
+//        myProfileVC.userName = userName
+//        myProfileVC.setDataBind()
+//        myProfileVC.modalPresentationStyle = .fullScreen
+//        self.present(myProfileVC, animated: true)
+//    }
     
     // MARK: - @objc Methods
 
     @objc private func myProfileDidTap() {
-        presentToMyProfileVC()
+        let friendVC = FriendViewController()
+        friendVC.presentToMyProfileVC()
     }
 }
