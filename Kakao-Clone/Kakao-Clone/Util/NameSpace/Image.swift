@@ -41,5 +41,6 @@ public enum Image {
     // MARK: - ChattingTab
     
     public static let plusIcon = UIImage(named: "iconPlus")!
+    public static let advertisement = UIImage(named: "advertisement")!
     
 }

@@ -66,7 +66,7 @@ extension ChattingTableViewCell {
         
         chattingName.snp.makeConstraints {
             $0.top.equalToSuperview().offset(10)
-            $0.leading.equalToSuperview().offset(11)
+            $0.leading.equalTo(chattingProfile.snp.trailing).offset(11)
         }
         
         chattingPreview.snp.makeConstraints {
