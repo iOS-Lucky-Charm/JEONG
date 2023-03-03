@@ -14,15 +14,15 @@ final class FriendViewController: UIViewController {
     
     // MARK: - UI Components
     
-    private let friendLabel = UILabel()
-    private let settingImageView = UIImageView()
-    private let myProfileImageButton = UIButton()
+    private let friendLabel: UILabel = UILabel()
+    private let settingImageView: UIImageView = UIImageView()
+    private let myProfileHeaderView: UITableView = UITableView()
+    private let friendTableView: UITableView = UITableView(frame: .zero, style: .grouped)
+    private var friendListModel: [FriendListModel] = FriendListModel.friendListModelDummyData()
     
     // MARK: - Properties
     
     var userName: String?
-    
-    // MARK: - Initializer
     
     // MARK: - View Life Cycle
     
@@ -34,6 +34,7 @@ final class FriendViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         setLayout()
+        setDelegate()
     }
 }
 
@@ -54,17 +55,32 @@ extension FriendViewController {
             $0.image = Image.settingIcon
         }
         
-        myProfileImageButton.do {
-            $0.setImage(Image.profileImage, for: .normal)
-            $0.addTarget(self, action: #selector(myProfileDidTap), for: .touchUpInside)
+        myProfileHeaderView.do {
+            $0.backgroundColor = .white
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            $0.register(FriendViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: FriendViewHeaderFooterView.identifier)
         }
+        
+        friendTableView.do {
+            $0.backgroundColor = .white
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            $0.separatorStyle = .none
+            $0.registerCell(FriendTableViewCell.self)
+        }
+    }
+    
+    // MARK: - Methods
+    
+    private func setDelegate() {
+        friendTableView.delegate = self
+        friendTableView.dataSource = self
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
         
-        view.addSubviews(friendLabel, settingImageView, myProfileImageButton)
+        view.addSubviews(friendLabel, settingImageView, myProfileHeaderView, friendTableView)
         
         friendLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(12)
@@ -77,27 +93,52 @@ extension FriendViewController {
             $0.width.height.equalTo(21)
         }
         
-        myProfileImageButton.snp.makeConstraints {
-            $0.top.equalTo(friendLabel.snp.bottom).offset(26)
-            $0.leading.equalTo(view.safeAreaLayoutGuide).offset(14)
-            $0.width.equalTo(59)
-            $0.height.equalTo(58)
+        myProfileHeaderView.snp.makeConstraints {
+            $0.top.equalTo(friendLabel.snp.bottom).offset(16)
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+        friendTableView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(124)
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalToSuperview()
         }
     }
+}
+
+// MARK: - UITableViewDataSource
+
+extension FriendViewController: UITableViewDataSource {
     
-    // MARK: - Methods
-    
-    private func presentToMyProfileVC() {
-        let myProfileVC = MyProfileViewController()
-        myProfileVC.userName = userName
-        myProfileVC.setDataBind()
-        myProfileVC.modalPresentationStyle = .fullScreen
-        self.present(myProfileVC, animated: true, completion: nil)
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: FriendViewHeaderFooterView.identifier) as? FriendViewHeaderFooterView else {
+            return UIView()
+        }
+
+        return headerView
     }
     
-    // MARK: - @objc Methods
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 73
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return friendListModel.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueCell(type: FriendTableViewCell.self, indexPath: indexPath)
+        cell.setDataBind(model:friendListModel[indexPath.row])
+        return cell
+    }
+}
 
-    @objc private func myProfileDidTap() {
-        presentToMyProfileVC()
+
+// MARK: - UITableViewDelegate
+
+extension FriendViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
 }

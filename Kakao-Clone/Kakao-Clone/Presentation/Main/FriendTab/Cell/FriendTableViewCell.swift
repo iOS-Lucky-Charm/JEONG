@@ -36,10 +36,8 @@ extension FriendTableViewCell {
     // MARK: - UI Components Property
     
     private func setUI() {
-        
         backgroundColor = .white
         contentView.backgroundColor = .clear
-        contentView.addSubviews(friendListProfile, friendListName, friendListStatusMessage)
         
         friendListName.do {
             $0.font = .systemFont(ofSize: 12, weight: .semibold)
@@ -48,7 +46,7 @@ extension FriendTableViewCell {
         
         friendListStatusMessage.do {
             $0.font = .systemFont(ofSize: 11, weight: .regular)
-            $0.textColor = .systemGray4
+            $0.textColor = .systemGray
         }
     }
     
@@ -56,19 +54,22 @@ extension FriendTableViewCell {
     
     private func setLayout() {
         
+        contentView.addSubviews(friendListProfile, friendListName, friendListStatusMessage)
+        
         friendListProfile.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(4)
+            $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().offset(16)
-            $0.width.height.equalTo(44)
+            $0.width.equalTo(44)
+            $0.height.equalTo(41)
         }
         
         friendListName.snp.makeConstraints {
             $0.top.equalToSuperview().offset(9)
-            $0.leading.equalTo(friendListProfile).offset(11)
+            $0.leading.equalTo(friendListProfile.snp.trailing).offset(11)
         }
         
         friendListStatusMessage.snp.makeConstraints {
-            $0.top.equalTo(friendListName).offset(3)
+            $0.top.equalTo(friendListName.snp.bottom).offset(3)
             $0.leading.equalTo(friendListName)
         }
     }
