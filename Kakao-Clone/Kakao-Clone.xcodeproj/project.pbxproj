@@ -32,6 +32,7 @@
 		037E210629B22872005327CA /* FriendHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E210529B22872005327CA /* FriendHeaderView.swift */; };
 		037E210829B24B29005327CA /* ChattingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E210729B24B29005327CA /* ChattingModel.swift */; };
 		037E210D29B24C45005327CA /* ChattingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E210C29B24C45005327CA /* ChattingTableViewCell.swift */; };
+		037E210F29B25199005327CA /* ChattingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E210E29B25199005327CA /* ChattingHeaderView.swift */; };
 		03A1C87A29A3841A00E8428B /* UIButton +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1C87929A3841A00E8428B /* UIButton +.swift */; };
 		03A1C87D29A3A09400E8428B /* ProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1C87C29A3A09400E8428B /* ProfileButton.swift */; };
 		03B7D5D2299FA30600D31B56 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03B7D5D1299FA30600D31B56 /* Image.xcassets */; };
@@ -67,6 +68,7 @@
 		037E210529B22872005327CA /* FriendHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendHeaderView.swift; sourceTree = "<group>"; };
 		037E210729B24B29005327CA /* ChattingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingModel.swift; sourceTree = "<group>"; };
 		037E210C29B24C45005327CA /* ChattingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingTableViewCell.swift; sourceTree = "<group>"; };
+		037E210E29B25199005327CA /* ChattingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingHeaderView.swift; sourceTree = "<group>"; };
 		03A1C87929A3841A00E8428B /* UIButton +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton +.swift"; sourceTree = "<group>"; };
 		03A1C87C29A3A09400E8428B /* ProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButton.swift; sourceTree = "<group>"; };
 		03B7D5D1299FA30600D31B56 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 		037E210929B24C12005327CA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				037E210E29B25199005327CA /* ChattingHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				032B57DA29929D2B000678D9 /* SignInTextFieldView.swift in Sources */,
 				031D5BD4299A41FA00E54F6D /* FriendViewController.swift in Sources */,
 				032B57B629927FE8000678D9 /* AppDelegate.swift in Sources */,
+				037E210F29B25199005327CA /* ChattingHeaderView.swift in Sources */,
 				037E210D29B24C45005327CA /* ChattingTableViewCell.swift in Sources */,
 				03A1C87A29A3841A00E8428B /* UIButton +.swift in Sources */,
 				032B57B829927FE8000678D9 /* SceneDelegate.swift in Sources */,

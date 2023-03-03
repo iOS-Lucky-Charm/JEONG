@@ -42,7 +42,7 @@ extension FriendHeaderView {
     // MARK: - UI Components Property
     
     private func setUI() {
-        backgroundColor = .black
+        backgroundColor = .white
         
         myProfileImageButton.do {
             $0.setImage(Image.profileImage, for: .normal)

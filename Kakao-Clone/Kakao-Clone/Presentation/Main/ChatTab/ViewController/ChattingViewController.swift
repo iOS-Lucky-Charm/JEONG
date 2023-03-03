@@ -18,6 +18,7 @@ final class ChattingViewController: UIViewController {
     private let openChattingLabel: UILabel = UILabel()
     private let plusIconImage: UIImageView = UIImageView()
     private let settingIconImage: UIImageView = UIImageView()
+    private let chattingAdvertisement: UITableView = UITableView()
     private let chattingTableView: UITableView = UITableView(frame: .zero, style: .grouped)
     private var chattingModel: [ChattingModel] = ChattingModel.chattingModelDummyData()
     
@@ -63,6 +64,7 @@ extension ChattingViewController {
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.separatorStyle = .none
             $0.registerCell(ChattingTableViewCell.self)
+            $0.register(ChattingHeaderView.self, forHeaderFooterViewReuseIdentifier: ChattingHeaderView.identifier)
         }
     }
     
@@ -120,6 +122,15 @@ extension ChattingViewController: UITableViewDataSource {
 }
 
 extension ChattingViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ChattingHeaderView.identifier) as? ChattingHeaderView else { return UIView() }
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 80
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
