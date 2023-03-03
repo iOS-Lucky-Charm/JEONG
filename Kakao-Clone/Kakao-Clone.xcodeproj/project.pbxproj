@@ -29,6 +29,7 @@
 		037E20FC29B21681005327CA /* UICollectionView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20FB29B21681005327CA /* UICollectionView +.swift */; };
 		037E20FE29B21699005327CA /* UITableView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20FD29B21699005327CA /* UITableView +.swift */; };
 		037E210029B21727005327CA /* NSObject +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20FF29B21727005327CA /* NSObject +.swift */; };
+		037E210429B21953005327CA /* FriendListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E210329B21953005327CA /* FriendListModel.swift */; };
 		03A1C87A29A3841A00E8428B /* UIButton +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1C87929A3841A00E8428B /* UIButton +.swift */; };
 		03A1C87D29A3A09400E8428B /* ProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1C87C29A3A09400E8428B /* ProfileButton.swift */; };
 		03B7D5D2299FA30600D31B56 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03B7D5D1299FA30600D31B56 /* Image.xcassets */; };
@@ -61,6 +62,7 @@
 		037E20FB29B21681005327CA /* UICollectionView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView +.swift"; sourceTree = "<group>"; };
 		037E20FD29B21699005327CA /* UITableView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView +.swift"; sourceTree = "<group>"; };
 		037E20FF29B21727005327CA /* NSObject +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject +.swift"; sourceTree = "<group>"; };
+		037E210329B21953005327CA /* FriendListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListModel.swift; sourceTree = "<group>"; };
 		03A1C87929A3841A00E8428B /* UIButton +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton +.swift"; sourceTree = "<group>"; };
 		03A1C87C29A3A09400E8428B /* ProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButton.swift; sourceTree = "<group>"; };
 		03B7D5D1299FA30600D31B56 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				032B57C92992832B000678D9 /* Application */,
+				037E210129B218C4005327CA /* Data */,
 				032B57CA29928351000678D9 /* Presentation */,
 				032B57D229928A46000678D9 /* Resource */,
 				032B57D129928A2C000678D9 /* Util */,
@@ -283,6 +286,14 @@
 				037E20F929B208CD005327CA /* FriendTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		037E210129B218C4005327CA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				037E210329B21953005327CA /* FriendListModel.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		03A1C87E29A3A65500E8428B /* CustomClass */ = {
@@ -445,6 +456,7 @@
 				032B57B829927FE8000678D9 /* SceneDelegate.swift in Sources */,
 				03F386772994095E003416AA /* WelcomeViewController.swift in Sources */,
 				037E20F729B20899005327CA /* FriendView.swift in Sources */,
+				037E210429B21953005327CA /* FriendListModel.swift in Sources */,
 				037E20FE29B21699005327CA /* UITableView +.swift in Sources */,
 				03B7D5D5299FA43B00D31B56 /* Image.swift in Sources */,
 			);

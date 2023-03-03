@@ -72,5 +72,11 @@ extension FriendTableViewCell {
             $0.leading.equalTo(friendListName)
         }
     }
+    
+    // MARK: - Methods
+    
+    func setDataBind() {
+        
+    }
 }
 
