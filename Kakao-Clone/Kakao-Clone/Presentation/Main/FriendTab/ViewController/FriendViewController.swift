@@ -26,10 +26,6 @@ final class FriendViewController: UIViewController {
     
     // MARK: - View Life Cycle
     
-    override func viewWillAppear(_ animated: Bool) {
-      navigationController?.isNavigationBarHidden = true // 뷰 컨트롤러가 나타날 때 숨기기
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -71,14 +67,14 @@ extension FriendViewController {
         view.addSubviews(friendLabel, settingImageView, friendTableView)
         
         friendLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(12)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(15)
             $0.leading.equalTo(view.safeAreaLayoutGuide).offset(14)
         }
         
         settingImageView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(14)
-            $0.leading.equalTo(friendLabel.snp.trailing).offset(4)
-            $0.width.height.equalTo(21)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(17)
+            $0.trailing.equalTo(view.safeAreaLayoutGuide).inset(15)
+            $0.width.height.equalTo(19)
         }
         
         friendTableView.snp.makeConstraints {
@@ -117,6 +113,15 @@ extension FriendViewController: UITableViewDataSource {
         cell.setDataBind(model:friendListModel[indexPath.row])
         return cell
     }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if indexPath.section == 0 {
+//            presentToMyProfileVC()
+//        }
+//        else {
+//            print("tabb")
+//        }
+//    }
 }
 
 

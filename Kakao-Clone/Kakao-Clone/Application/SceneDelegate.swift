@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             let rootVC = KakaoTabbarController()
             let navigationController = UINavigationController(rootViewController: rootVC)
-//            navigationController.isNavigationBarHidden = true
+            navigationController.isNavigationBarHidden = true
             window.rootViewController = navigationController
             window.makeKeyAndVisible()
             self.window = window
