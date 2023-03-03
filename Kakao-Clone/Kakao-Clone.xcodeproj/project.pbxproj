@@ -24,6 +24,11 @@
 		037E20ED29B102E5005327CA /* SharpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20EC29B102E5005327CA /* SharpViewController.swift */; };
 		037E20EF29B102ED005327CA /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20EE29B102ED005327CA /* ShopViewController.swift */; };
 		037E20F129B102F7005327CA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20F029B102F7005327CA /* SettingViewController.swift */; };
+		037E20F729B20899005327CA /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20F629B20899005327CA /* FriendView.swift */; };
+		037E20FA29B208CD005327CA /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20F929B208CD005327CA /* FriendTableViewCell.swift */; };
+		037E20FC29B21681005327CA /* UICollectionView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20FB29B21681005327CA /* UICollectionView +.swift */; };
+		037E20FE29B21699005327CA /* UITableView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20FD29B21699005327CA /* UITableView +.swift */; };
+		037E210029B21727005327CA /* NSObject +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20FF29B21727005327CA /* NSObject +.swift */; };
 		03A1C87A29A3841A00E8428B /* UIButton +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1C87929A3841A00E8428B /* UIButton +.swift */; };
 		03A1C87D29A3A09400E8428B /* ProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1C87C29A3A09400E8428B /* ProfileButton.swift */; };
 		03B7D5D2299FA30600D31B56 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03B7D5D1299FA30600D31B56 /* Image.xcassets */; };
@@ -51,6 +56,11 @@
 		037E20EC29B102E5005327CA /* SharpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharpViewController.swift; sourceTree = "<group>"; };
 		037E20EE29B102ED005327CA /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		037E20F029B102F7005327CA /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		037E20F629B20899005327CA /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
+		037E20F929B208CD005327CA /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		037E20FB29B21681005327CA /* UICollectionView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView +.swift"; sourceTree = "<group>"; };
+		037E20FD29B21699005327CA /* UITableView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView +.swift"; sourceTree = "<group>"; };
+		037E20FF29B21727005327CA /* NSObject +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject +.swift"; sourceTree = "<group>"; };
 		03A1C87929A3841A00E8428B /* UIButton +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton +.swift"; sourceTree = "<group>"; };
 		03A1C87C29A3A09400E8428B /* ProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButton.swift; sourceTree = "<group>"; };
 		03B7D5D1299FA30600D31B56 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
@@ -194,6 +204,9 @@
 			children = (
 				032B57D529928AA7000678D9 /* UIView +.swift */,
 				03A1C87929A3841A00E8428B /* UIButton +.swift */,
+				037E20FB29B21681005327CA /* UICollectionView +.swift */,
+				037E20FD29B21699005327CA /* UITableView +.swift */,
+				037E20FF29B21727005327CA /* NSObject +.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -209,7 +222,9 @@
 		037E20E429B1018C005327CA /* FriendTab */ = {
 			isa = PBXGroup;
 			children = (
+				037E20F429B1FC8C005327CA /* View */,
 				037E20E929B101DD005327CA /* ViewController */,
+				037E20F829B208B6005327CA /* Cell */,
 			);
 			path = FriendTab;
 			sourceTree = "<group>";
@@ -252,6 +267,22 @@
 				031D5BD3299A41FA00E54F6D /* FriendViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		037E20F429B1FC8C005327CA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				037E20F629B20899005327CA /* FriendView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		037E20F829B208B6005327CA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				037E20F929B208CD005327CA /* FriendTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		03A1C87E29A3A65500E8428B /* CustomClass */ = {
@@ -398,8 +429,11 @@
 				03A1C87D29A3A09400E8428B /* ProfileButton.swift in Sources */,
 				032B57BA29927FE8000678D9 /* SignInViewController.swift in Sources */,
 				037E20EF29B102ED005327CA /* ShopViewController.swift in Sources */,
+				037E210029B21727005327CA /* NSObject +.swift in Sources */,
+				037E20FC29B21681005327CA /* UICollectionView +.swift in Sources */,
 				037E20F129B102F7005327CA /* SettingViewController.swift in Sources */,
 				03B7D5DB299FB0B200D31B56 /* Color.swift in Sources */,
+				037E20FA29B208CD005327CA /* FriendTableViewCell.swift in Sources */,
 				037E20E329B0FF50005327CA /* KakaoTabbarController.swift in Sources */,
 				032B57D629928AA7000678D9 /* UIView +.swift in Sources */,
 				037E20EB29B102DB005327CA /* ChattingViewController.swift in Sources */,
@@ -410,6 +444,8 @@
 				03A1C87A29A3841A00E8428B /* UIButton +.swift in Sources */,
 				032B57B829927FE8000678D9 /* SceneDelegate.swift in Sources */,
 				03F386772994095E003416AA /* WelcomeViewController.swift in Sources */,
+				037E20F729B20899005327CA /* FriendView.swift in Sources */,
+				037E20FE29B21699005327CA /* UITableView +.swift in Sources */,
 				03B7D5D5299FA43B00D31B56 /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

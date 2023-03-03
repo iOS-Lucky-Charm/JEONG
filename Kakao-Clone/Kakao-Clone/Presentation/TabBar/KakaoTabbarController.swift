@@ -17,8 +17,6 @@ class KakaoTabbarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTabBarUI()
-        tabBar.frame.size.height = 61
-        tabBar.frame.origin.y = view.frame.height - 61
     }
 }
 
