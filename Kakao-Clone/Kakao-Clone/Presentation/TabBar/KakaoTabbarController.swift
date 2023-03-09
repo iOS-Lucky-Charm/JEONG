@@ -13,6 +13,11 @@ import Then
 class KakaoTabbarController: UITabBarController {
     
     // MARK: - Life Cycle
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tabBar.invalidateIntrinsicContentSize()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

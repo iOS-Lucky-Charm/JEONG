@@ -19,6 +19,7 @@
 		032B57D629928AA7000678D9 /* UIView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B57D529928AA7000678D9 /* UIView +.swift */; };
 		032B57D829929266000678D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 032B57D729929266000678D9 /* Main.storyboard */; };
 		032B57DA29929D2B000678D9 /* SignInTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B57D929929D2B000678D9 /* SignInTextFieldView.swift */; };
+		036C0AC729B9EAF100BC6531 /* UITabBar +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036C0AC629B9EAF100BC6531 /* UITabBar +.swift */; };
 		037E20E329B0FF50005327CA /* KakaoTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20E229B0FF50005327CA /* KakaoTabbarController.swift */; };
 		037E20EB29B102DB005327CA /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20EA29B102DB005327CA /* ChattingViewController.swift */; };
 		037E20ED29B102E5005327CA /* SharpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20EC29B102E5005327CA /* SharpViewController.swift */; };
@@ -33,7 +34,6 @@
 		037E210829B24B29005327CA /* ChattingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E210729B24B29005327CA /* ChattingModel.swift */; };
 		037E210D29B24C45005327CA /* ChattingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E210C29B24C45005327CA /* ChattingTableViewCell.swift */; };
 		037E210F29B25199005327CA /* ChattingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E210E29B25199005327CA /* ChattingHeaderView.swift */; };
-		03A1C87A29A3841A00E8428B /* UIButton +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1C87929A3841A00E8428B /* UIButton +.swift */; };
 		03A1C87D29A3A09400E8428B /* ProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1C87C29A3A09400E8428B /* ProfileButton.swift */; };
 		03B7D5D2299FA30600D31B56 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03B7D5D1299FA30600D31B56 /* Image.xcassets */; };
 		03B7D5D5299FA43B00D31B56 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B7D5D4299FA43B00D31B56 /* Image.swift */; };
@@ -55,6 +55,7 @@
 		032B57D529928AA7000678D9 /* UIView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView +.swift"; sourceTree = "<group>"; };
 		032B57D729929266000678D9 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		032B57D929929D2B000678D9 /* SignInTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTextFieldView.swift; sourceTree = "<group>"; };
+		036C0AC629B9EAF100BC6531 /* UITabBar +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar +.swift"; sourceTree = "<group>"; };
 		037E20E229B0FF50005327CA /* KakaoTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoTabbarController.swift; sourceTree = "<group>"; };
 		037E20EA29B102DB005327CA /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
 		037E20EC29B102E5005327CA /* SharpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharpViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +70,6 @@
 		037E210729B24B29005327CA /* ChattingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingModel.swift; sourceTree = "<group>"; };
 		037E210C29B24C45005327CA /* ChattingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingTableViewCell.swift; sourceTree = "<group>"; };
 		037E210E29B25199005327CA /* ChattingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingHeaderView.swift; sourceTree = "<group>"; };
-		03A1C87929A3841A00E8428B /* UIButton +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton +.swift"; sourceTree = "<group>"; };
 		03A1C87C29A3A09400E8428B /* ProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButton.swift; sourceTree = "<group>"; };
 		03B7D5D1299FA30600D31B56 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		03B7D5D4299FA43B00D31B56 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -212,10 +212,10 @@
 			isa = PBXGroup;
 			children = (
 				032B57D529928AA7000678D9 /* UIView +.swift */,
-				03A1C87929A3841A00E8428B /* UIButton +.swift */,
 				037E20FB29B21681005327CA /* UICollectionView +.swift */,
 				037E20FD29B21699005327CA /* UITableView +.swift */,
 				037E20FF29B21727005327CA /* NSObject +.swift */,
+				036C0AC629B9EAF100BC6531 /* UITabBar +.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -489,12 +489,12 @@
 				032B57B629927FE8000678D9 /* AppDelegate.swift in Sources */,
 				037E210F29B25199005327CA /* ChattingHeaderView.swift in Sources */,
 				037E210D29B24C45005327CA /* ChattingTableViewCell.swift in Sources */,
-				03A1C87A29A3841A00E8428B /* UIButton +.swift in Sources */,
 				032B57B829927FE8000678D9 /* SceneDelegate.swift in Sources */,
 				03F386772994095E003416AA /* WelcomeViewController.swift in Sources */,
 				037E210429B21953005327CA /* FriendListModel.swift in Sources */,
 				037E20FE29B21699005327CA /* UITableView +.swift in Sources */,
 				03B7D5D5299FA43B00D31B56 /* Image.swift in Sources */,
+				036C0AC729B9EAF100BC6531 /* UITabBar +.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
