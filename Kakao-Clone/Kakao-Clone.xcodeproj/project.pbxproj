@@ -251,10 +251,10 @@
 		037E20E529B101A0005327CA /* ChatTab */ = {
 			isa = PBXGroup;
 			children = (
-				036C0AC829B9F15700BC6531 /* Album */,
 				037E210929B24C12005327CA /* View */,
 				037E210A29B24C19005327CA /* ViewController */,
 				037E210B29B24C20005327CA /* Cell */,
+				036C0AC829B9F15700BC6531 /* Album */,
 			);
 			path = ChatTab;
 			sourceTree = "<group>";

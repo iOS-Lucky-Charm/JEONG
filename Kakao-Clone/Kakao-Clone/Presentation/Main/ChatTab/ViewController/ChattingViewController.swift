@@ -16,7 +16,7 @@ final class ChattingViewController: UIViewController {
     
     private let chattingLabel: UILabel = UILabel()
     private let openChattingLabel: UILabel = UILabel()
-    private let plusIconImage: UIImageView = UIImageView()
+    private let plusIconButton: UIButton = UIButton()
     private let settingIconButton: UIButton = UIButton()
     private let chattingAdvertisement: UITableView = UITableView()
     private let chattingTableView: UITableView = UITableView(frame: .zero, style: .grouped)
@@ -51,8 +51,9 @@ extension ChattingViewController {
             $0.font = .systemFont(ofSize: 22, weight: .medium)
         }
         
-        plusIconImage.do {
-            $0.image = Image.plusIcon
+        plusIconButton.do {
+            $0.setImage(Image.plusIcon, for: .normal)
+            $0.addTarget(self, action: #selector(plusIconButtonDidTap), for: .touchUpInside)
         }
         
         settingIconButton.do {
@@ -72,7 +73,7 @@ extension ChattingViewController {
     
     private func setLayout() {
         
-        view.addSubviews(chattingLabel, openChattingLabel, plusIconImage, settingIconButton, chattingTableView)
+        view.addSubviews(chattingLabel, openChattingLabel, plusIconButton, settingIconButton, chattingTableView)
         
         chattingLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(15)
@@ -90,7 +91,7 @@ extension ChattingViewController {
             $0.width.height.equalTo(19)
         }
         
-        plusIconImage.snp.makeConstraints {
+        plusIconButton.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(17)
             $0.trailing.equalTo(settingIconButton.snp.leading).inset(-12)
             $0.width.height.equalTo(19)
@@ -103,11 +104,27 @@ extension ChattingViewController {
         }
     }
     
+    // MARK: - Methods
+    
     private func setDelegate() {
         chattingTableView.delegate = self
         chattingTableView.dataSource = self
     }
+    
+    private func presentToAlbumVC() {
+        let albumVC = AlbumViewController()
+        albumVC.modalPresentationStyle = .fullScreen
+        self.present(albumVC, animated: true, completion: nil)
+    }
+    
+    // MARK: - @objc Methods
+    
+    @objc private func plusIconButtonDidTap() {
+        presentToAlbumVC()
+    }
 }
+
+// MARK: - UITableViewDataSource
 
 extension ChattingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -120,6 +137,8 @@ extension ChattingViewController: UITableViewDataSource {
         return cell
     }
 }
+
+// MARK: - UITableViewDelegate
 
 extension ChattingViewController: UITableViewDelegate {
     

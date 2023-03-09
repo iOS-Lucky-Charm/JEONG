@@ -113,15 +113,6 @@ extension FriendViewController: UITableViewDataSource {
         cell.setDataBind(model:friendListModel[indexPath.row])
         return cell
     }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if indexPath.section == 0 {
-//            presentToMyProfileVC()
-//        }
-//        else {
-//            print("tabb")
-//        }
-//    }
 }
 
 
