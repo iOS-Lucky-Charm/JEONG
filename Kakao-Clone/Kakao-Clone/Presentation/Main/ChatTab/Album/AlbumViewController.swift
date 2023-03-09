@@ -1,17 +1,17 @@
 //
-//  SharpViewController.swift
+//  AlbumViewController.swift
 //  Kakao-Clone
 //
-//  Created by KJ on 2023/03/03.
+//  Created by KJ on 2023/03/09.
 //
 
 import UIKit
 
-final class SharpViewController: UIViewController {
+final class AlbumViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+
         // Do any additional setup after loading the view.
     }
     

@@ -14,9 +14,9 @@ class KakaoTabbarController: UITabBarController {
     
     // MARK: - Life Cycle
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        tabBar.invalidateIntrinsicContentSize()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
     override func viewDidLoad() {

@@ -20,6 +20,7 @@
 		032B57D829929266000678D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 032B57D729929266000678D9 /* Main.storyboard */; };
 		032B57DA29929D2B000678D9 /* SignInTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B57D929929D2B000678D9 /* SignInTextFieldView.swift */; };
 		036C0AC729B9EAF100BC6531 /* UITabBar +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036C0AC629B9EAF100BC6531 /* UITabBar +.swift */; };
+		036C0ACA29B9F19100BC6531 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036C0AC929B9F19100BC6531 /* AlbumViewController.swift */; };
 		037E20E329B0FF50005327CA /* KakaoTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20E229B0FF50005327CA /* KakaoTabbarController.swift */; };
 		037E20EB29B102DB005327CA /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20EA29B102DB005327CA /* ChattingViewController.swift */; };
 		037E20ED29B102E5005327CA /* SharpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20EC29B102E5005327CA /* SharpViewController.swift */; };
@@ -56,6 +57,7 @@
 		032B57D729929266000678D9 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		032B57D929929D2B000678D9 /* SignInTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTextFieldView.swift; sourceTree = "<group>"; };
 		036C0AC629B9EAF100BC6531 /* UITabBar +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar +.swift"; sourceTree = "<group>"; };
+		036C0AC929B9F19100BC6531 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		037E20E229B0FF50005327CA /* KakaoTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoTabbarController.swift; sourceTree = "<group>"; };
 		037E20EA29B102DB005327CA /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
 		037E20EC29B102E5005327CA /* SharpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharpViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +222,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		036C0AC829B9F15700BC6531 /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				036C0AC929B9F19100BC6531 /* AlbumViewController.swift */,
+			);
+			path = Album;
+			sourceTree = "<group>";
+		};
 		037E20E129B0FEF7005327CA /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +251,7 @@
 		037E20E529B101A0005327CA /* ChatTab */ = {
 			isa = PBXGroup;
 			children = (
+				036C0AC829B9F15700BC6531 /* Album */,
 				037E210929B24C12005327CA /* View */,
 				037E210A29B24C19005327CA /* ViewController */,
 				037E210B29B24C20005327CA /* Cell */,
@@ -488,6 +499,7 @@
 				031D5BD4299A41FA00E54F6D /* FriendViewController.swift in Sources */,
 				032B57B629927FE8000678D9 /* AppDelegate.swift in Sources */,
 				037E210F29B25199005327CA /* ChattingHeaderView.swift in Sources */,
+				036C0ACA29B9F19100BC6531 /* AlbumViewController.swift in Sources */,
 				037E210D29B24C45005327CA /* ChattingTableViewCell.swift in Sources */,
 				032B57B829927FE8000678D9 /* SceneDelegate.swift in Sources */,
 				03F386772994095E003416AA /* WelcomeViewController.swift in Sources */,

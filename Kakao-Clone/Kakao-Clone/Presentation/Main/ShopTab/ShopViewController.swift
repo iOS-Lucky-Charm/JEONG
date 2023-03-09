@@ -7,11 +7,11 @@
 
 import UIKit
 
-class ShopViewController: UIViewController {
+final class ShopViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = .white
         // Do any additional setup after loading the view.
     }
     

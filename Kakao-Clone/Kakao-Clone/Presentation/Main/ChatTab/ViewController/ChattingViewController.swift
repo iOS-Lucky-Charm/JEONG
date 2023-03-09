@@ -17,7 +17,7 @@ final class ChattingViewController: UIViewController {
     private let chattingLabel: UILabel = UILabel()
     private let openChattingLabel: UILabel = UILabel()
     private let plusIconImage: UIImageView = UIImageView()
-    private let settingIconImage: UIImageView = UIImageView()
+    private let settingIconButton: UIButton = UIButton()
     private let chattingAdvertisement: UITableView = UITableView()
     private let chattingTableView: UITableView = UITableView(frame: .zero, style: .grouped)
     private var chattingModel: [ChattingModel] = ChattingModel.chattingModelDummyData()
@@ -55,8 +55,8 @@ extension ChattingViewController {
             $0.image = Image.plusIcon
         }
         
-        settingIconImage.do {
-            $0.image = Image.settingIcon
+        settingIconButton.do {
+            $0.setImage(Image.settingIcon, for: .normal)
         }
         
         chattingTableView.do {
@@ -72,7 +72,7 @@ extension ChattingViewController {
     
     private func setLayout() {
         
-        view.addSubviews(chattingLabel, openChattingLabel, plusIconImage, settingIconImage, chattingTableView)
+        view.addSubviews(chattingLabel, openChattingLabel, plusIconImage, settingIconButton, chattingTableView)
         
         chattingLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(15)
@@ -84,7 +84,7 @@ extension ChattingViewController {
             $0.leading.equalTo(chattingLabel.snp.trailing).offset(7)
         }
         
-        settingIconImage.snp.makeConstraints {
+        settingIconButton.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(17)
             $0.trailing.equalTo(view.safeAreaLayoutGuide).inset(15)
             $0.width.height.equalTo(19)
@@ -92,7 +92,7 @@ extension ChattingViewController {
         
         plusIconImage.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(17)
-            $0.trailing.equalTo(settingIconImage.snp.leading).inset(-12)
+            $0.trailing.equalTo(settingIconButton.snp.leading).inset(-12)
             $0.width.height.equalTo(19)
         }
         

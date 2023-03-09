@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class FriendTableViewCell: UITableViewCell {
+final class FriendTableViewCell: UITableViewCell {
     
     // MARK: - UI Components
     
