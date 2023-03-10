@@ -35,6 +35,8 @@
 		037E210829B24B29005327CA /* ChattingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E210729B24B29005327CA /* ChattingModel.swift */; };
 		037E210D29B24C45005327CA /* ChattingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E210C29B24C45005327CA /* ChattingTableViewCell.swift */; };
 		037E210F29B25199005327CA /* ChattingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E210E29B25199005327CA /* ChattingHeaderView.swift */; };
+		0399FAD829BB553700B09048 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0399FAD729BB553700B09048 /* AlbumCollectionViewCell.swift */; };
+		0399FADA29BB577000B09048 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0399FAD929BB577000B09048 /* AlbumModel.swift */; };
 		03A1C87D29A3A09400E8428B /* ProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1C87C29A3A09400E8428B /* ProfileButton.swift */; };
 		03B7D5D2299FA30600D31B56 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03B7D5D1299FA30600D31B56 /* Image.xcassets */; };
 		03B7D5D5299FA43B00D31B56 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B7D5D4299FA43B00D31B56 /* Image.swift */; };
@@ -72,6 +74,8 @@
 		037E210729B24B29005327CA /* ChattingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingModel.swift; sourceTree = "<group>"; };
 		037E210C29B24C45005327CA /* ChattingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingTableViewCell.swift; sourceTree = "<group>"; };
 		037E210E29B25199005327CA /* ChattingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingHeaderView.swift; sourceTree = "<group>"; };
+		0399FAD729BB553700B09048 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
+		0399FAD929BB577000B09048 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
 		03A1C87C29A3A09400E8428B /* ProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButton.swift; sourceTree = "<group>"; };
 		03B7D5D1299FA30600D31B56 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		03B7D5D4299FA43B00D31B56 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -225,7 +229,8 @@
 		036C0AC829B9F15700BC6531 /* Album */ = {
 			isa = PBXGroup;
 			children = (
-				036C0AC929B9F19100BC6531 /* AlbumViewController.swift */,
+				0399FAD529BB551200B09048 /* ViewController */,
+				0399FAD629BB551D00B09048 /* Cell */,
 			);
 			path = Album;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 			children = (
 				037E210329B21953005327CA /* FriendListModel.swift */,
 				037E210729B24B29005327CA /* ChattingModel.swift */,
+				0399FAD929BB577000B09048 /* AlbumModel.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -336,6 +342,22 @@
 			isa = PBXGroup;
 			children = (
 				037E210C29B24C45005327CA /* ChattingTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0399FAD529BB551200B09048 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				036C0AC929B9F19100BC6531 /* AlbumViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0399FAD629BB551D00B09048 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0399FAD729BB553700B09048 /* AlbumCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -480,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03F38674299403DC003416AA /* SignUpViewController.swift in Sources */,
+				0399FADA29BB577000B09048 /* AlbumModel.swift in Sources */,
 				037E20ED29B102E5005327CA /* SharpViewController.swift in Sources */,
 				03A1C87D29A3A09400E8428B /* ProfileButton.swift in Sources */,
 				032B57BA29927FE8000678D9 /* SignInViewController.swift in Sources */,
@@ -490,6 +513,7 @@
 				03B7D5DB299FB0B200D31B56 /* Color.swift in Sources */,
 				037E20FA29B208CD005327CA /* FriendTableViewCell.swift in Sources */,
 				037E20E329B0FF50005327CA /* KakaoTabbarController.swift in Sources */,
+				0399FAD829BB553700B09048 /* AlbumCollectionViewCell.swift in Sources */,
 				032B57D629928AA7000678D9 /* UIView +.swift in Sources */,
 				037E20EB29B102DB005327CA /* ChattingViewController.swift in Sources */,
 				031D5BD6299A424100E54F6D /* MyProfileViewController.swift in Sources */,
