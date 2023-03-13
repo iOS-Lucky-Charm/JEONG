@@ -134,7 +134,8 @@ extension FriendViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let delete = UIContextualAction(style: .destructive, title: "삭제") { (UIContextualAction, UIView, success) in
+        let delete = UIContextualAction(style: .destructive, title: "삭제") {
+            (UIContextualAction, UIView, success) in
             self.friendListModel.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             success(true)

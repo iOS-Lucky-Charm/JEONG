@@ -15,6 +15,13 @@ final class AlbumCollectionViewCell: UICollectionViewCell {
     // MARK: - UI Components
     
     private let albumImageView: UIImageView = UIImageView()
+    let selectNumberLabel: UILabel = UILabel()
+    
+    // MARK: - Properties
+    
+    var selectPhoto = [UIImage]()
+    var selectPhotoArray = [Int]()
+    var number = Int()
     
     // MARK: - Initializer
 
@@ -35,15 +42,26 @@ extension AlbumCollectionViewCell {
     private func setUI() {
         backgroundColor = .clear
         contentView.backgroundColor = .clear
+        
+        selectNumberLabel.do {
+            $0.backgroundColor = .systemYellow
+            $0.layer.cornerRadius = 10
+        }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
-        addSubviews(albumImageView)
+        addSubviews(albumImageView, selectNumberLabel)
         
         albumImageView.snp.makeConstraints {
             $0.width.height.equalTo(119)
+        }
+        
+        selectNumberLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(4)
+            $0.trailing.equalToSuperview().inset(4)
+            $0.width.height.equalTo(18)
         }
     }
     
