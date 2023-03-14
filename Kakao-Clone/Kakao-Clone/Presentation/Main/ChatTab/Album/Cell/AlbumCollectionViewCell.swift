@@ -10,28 +10,39 @@ import UIKit
 import SnapKit
 import Then
 
-final class AlbumCollectionViewCell: UICollectionViewCell {
+class AlbumCollectionViewCell: UICollectionViewCell {
     
     // MARK: - UI Components
     
     private let albumImageView: UIImageView = UIImageView()
-    let selectNumberLabel: UILabel = UILabel()
+    private let selectedView: UIView = UIView()
+    private let selectedLabel: UILabel = UILabel()
     
     // MARK: - Properties
     
-    var selectPhoto = [UIImage]()
-    var selectPhotoArray = [Int]()
-    var number = Int()
+//    var selectedCell: Bool = true
     
     // MARK: - Initializer
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setUI()
         setLayout()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                selectedView.isHidden = false
+            }
+            else {
+                selectedView.isHidden = true
+            }
+        }
     }
 }
 
@@ -43,25 +54,35 @@ extension AlbumCollectionViewCell {
         backgroundColor = .clear
         contentView.backgroundColor = .clear
         
-        selectNumberLabel.do {
+        selectedView.do {
+            $0.layer.cornerRadius = 9
             $0.backgroundColor = .systemYellow
-            $0.layer.cornerRadius = 10
+            $0.isHidden = true
+        }
+        
+        selectedLabel.do {
+            $0.textColor = .black
+            $0.font = .systemFont(ofSize: 10, weight: .regular)
         }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
-        addSubviews(albumImageView, selectNumberLabel)
+        contentView.addSubviews(albumImageView, selectedView)
+        selectedView.addSubviews(selectedLabel)
         
         albumImageView.snp.makeConstraints {
-            $0.width.height.equalTo(119)
+            $0.edges.equalToSuperview()
         }
         
-        selectNumberLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(4)
-            $0.trailing.equalToSuperview().inset(4)
+        selectedView.snp.makeConstraints {
+            $0.top.trailing.equalToSuperview().inset(4)
             $0.width.height.equalTo(18)
+        }
+        
+        selectedLabel.snp.makeConstraints {
+            $0.center.equalToSuperview()
         }
     }
     
