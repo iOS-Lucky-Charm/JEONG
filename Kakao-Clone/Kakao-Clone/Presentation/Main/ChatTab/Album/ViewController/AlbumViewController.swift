@@ -25,6 +25,10 @@ final class AlbumViewController: UIViewController {
     }()
     private var albumModel: [AlbumModel] = AlbumModel.albumModelDummyData()
     
+    // MARK: - Properties
+    
+    private var selectedNumberArray = [Int]()
+    
     // MARK: - View Life Cycle
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,9 +38,9 @@ final class AlbumViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDelegate()
         setUI()
         setLayout()
-        setDelegate()
         setAddTarget()
     }
 }
@@ -137,7 +141,44 @@ extension AlbumViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(type: AlbumCollectionViewCell.self, indexPath: indexPath)
         cell.setDataBind(model: albumModel[indexPath.row])
+//        cell.albumImageView.image = albumImage[indexPath.item]
+//        cell.layer.borderWidth = 0
+//        cell.selectedView.isHidden = true
+//        if !selectedNumberArray.isEmpty {
+//            print("cellForitemAt")
+//            for i in 0...selectedNumberArray.count - 1 {
+//                if indexPath.item == selectedNumberArray[i] {
+//                    cell.layer.borderColor = UIColor.systemYellow.cgColor
+//                    cell.layer.borderWidth = 3
+//                    cell.selectedView.isHidden = false
+//                    cell.selectedLabel.text = "\(i)"
+//                }
+//            }
+//        }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! AlbumCollectionViewCell
+        print("didSelectItemAt")
+        if cell.selectedView.isHidden == true {
+            if selectedNumberArray.count < 11 {
+                selectedNumberArray.append(indexPath.item)
+                for i in 0...selectedNumberArray.count - 1 {
+                    if indexPath.item == selectedNumberArray[i] {
+                        cell.layer.borderColor = UIColor.systemYellow.cgColor
+                        cell.layer.borderWidth = 3
+                        cell.selectedView.isHidden = false
+                        cell.selectedLabel.text = "\(i)"
+                    }
+                }
+            }
+        }
+        else if cell.selectedView.isHidden == false {
+            selectedNumberArray.remove(at: Int(cell.selectedLabel.text!)!)
+            cell.layer.borderWidth = 0
+            cell.selectedView.isHidden = true
+        }
     }
 }
 

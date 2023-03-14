@@ -14,13 +14,9 @@ class AlbumCollectionViewCell: UICollectionViewCell {
     
     // MARK: - UI Components
     
-    private let albumImageView: UIImageView = UIImageView()
-    private let selectedView: UIView = UIView()
-    private let selectedLabel: UILabel = UILabel()
-    
-    // MARK: - Properties
-    
-//    var selectedCell: Bool = true
+    let albumImageView: UIImageView = UIImageView()
+    let selectedView: UIView = UIView()
+    let selectedLabel: UILabel = UILabel()
     
     // MARK: - Initializer
 
@@ -34,16 +30,16 @@ class AlbumCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override var isSelected: Bool {
-        didSet {
-            if isSelected {
-                selectedView.isHidden = false
-            }
-            else {
-                selectedView.isHidden = true
-            }
-        }
-    }
+//    override var isSelected: Bool {
+//        didSet {
+//            if isSelected {
+//                selectedView.isHidden = false
+//            }
+//            else {
+//                selectedView.isHidden = true
+//            }
+//        }
+//    }
 }
 
 extension AlbumCollectionViewCell {
