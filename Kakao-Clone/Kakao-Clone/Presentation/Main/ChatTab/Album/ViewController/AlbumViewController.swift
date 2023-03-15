@@ -163,10 +163,6 @@ extension AlbumViewController: UICollectionViewDataSource {
             cell.selectedBorder(index: index)
         }
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
