@@ -25,6 +25,10 @@ final class AlbumViewController: UIViewController {
     }()
     private var albumModel: [AlbumModel] = AlbumModel.albumModelDummyData()
     
+    // MARK: - Properties
+    
+    private var selectedImageList = [Int]()
+    
     // MARK: - View Life Cycle
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,9 +38,9 @@ final class AlbumViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDelegate()
         setUI()
         setLayout()
-        setDelegate()
         setAddTarget()
     }
 }
@@ -139,6 +143,26 @@ extension AlbumViewController: UICollectionViewDataSource {
         cell.setDataBind(model: albumModel[indexPath.row])
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! AlbumCollectionViewCell
+        
+        if selectedImageList.contains(indexPath.row) {
+            guard let index = selectedImageList.firstIndex(of: indexPath.row) else { return }
+            selectedImageList.remove(at: index)
+            cell.unSelectedBorder()
+            selectedImageList.forEach {
+                let selectedCell = collectionView.cellForItem(at: [0, $0]) as! AlbumCollectionViewCell
+                guard let newIndex = selectedImageList.firstIndex(of: $0) else { return }
+                selectedCell.changeIndexLabel(index: newIndex)
+            }
+        }
+        else {
+            selectedImageList.append(indexPath.row)
+            guard let index = selectedImageList.firstIndex(of: indexPath.row) else { return }
+            cell.selectedBorder(index: index)
+        }
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -146,8 +170,9 @@ extension AlbumViewController: UICollectionViewDataSource {
 extension AlbumViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = UIScreen.main.bounds.width - 18
-        return CGSize(width: width / 3, height: 119)
+        let width = (UIScreen.main.bounds.width - 18) / 3
+        let height = width
+        return CGSize(width: width, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

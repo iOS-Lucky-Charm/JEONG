@@ -132,4 +132,16 @@ extension FriendViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "삭제") {
+            (UIContextualAction, UIView, success) in
+            self.friendListModel.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            success(true)
+        }
+        delete.backgroundColor = .systemRed
+        let configuration = UISwipeActionsConfiguration(actions: [delete])
+        return configuration
+    }
 }
