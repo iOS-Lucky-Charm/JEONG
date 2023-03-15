@@ -141,46 +141,12 @@ extension AlbumViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(type: AlbumCollectionViewCell.self, indexPath: indexPath)
         cell.setDataBind(model: albumModel[indexPath.row])
-//        cell.albumImageView.image = albumImage[indexPath.item]
-//        cell.layer.borderWidth = 0
-//        cell.selectedView.isHidden = true
-//        if !selectedNumberArray.isEmpty {
-//            print("cellForitemAt")
-//            for i in 0...selectedNumberArray.count - 1 {
-//                if indexPath.item == selectedNumberArray[i] {
-//                    cell.layer.borderColor = UIColor.systemYellow.cgColor
-//                    cell.layer.borderWidth = 3
-//                    cell.selectedView.isHidden = false
-//                    cell.selectedLabel.text = "\(i)"
-//                }
-//            }
-//        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! AlbumCollectionViewCell
         
-//        if cell.selectedView.isHidden == true {
-//            if selectedNumberArray.count < 10 {
-//                selectedNumberArray.append(indexPath.item)
-//                print(selectedNumberArray)
-//                for i in 0...selectedNumberArray.count - 1 {
-//                    if indexPath.item == selectedNumberArray[i] {
-//                        cell.layer.borderColor = UIColor.systemYellow.cgColor
-//                        cell.layer.borderWidth = 3
-//                        cell.selectedView.isHidden = false
-//                        cell.selectedLabel.text = "\(i)"
-//                    }
-//                }
-//            }
-//        }
-//        else if cell.selectedView.isHidden == false {
-//            selectedNumberArray.remove(at: Int(cell.selectedLabel.text!)!)
-//            print(selectedNumberArray)
-//            cell.layer.borderWidth = 0
-//            cell.selectedView.isHidden = true
-//        }
         if selectedImageList.contains(indexPath.row) {
             guard let index = selectedImageList.firstIndex(of: indexPath.row) else { return }
             selectedImageList.remove(at: index)
@@ -196,6 +162,10 @@ extension AlbumViewController: UICollectionViewDataSource {
             guard let index = selectedImageList.firstIndex(of: indexPath.row) else { return }
             cell.selectedBorder(index: index)
         }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
 }
 
