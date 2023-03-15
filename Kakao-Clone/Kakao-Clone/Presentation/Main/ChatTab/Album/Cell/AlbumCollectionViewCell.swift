@@ -87,4 +87,21 @@ extension AlbumCollectionViewCell {
     func setDataBind(model: AlbumModel) {
         albumImageView.image = model.albumImage
     }
+    
+    func selectedBorder(index: Int) {
+        albumImageView.layer.borderWidth = 3
+        albumImageView.layer.borderColor = UIColor.systemYellow.cgColor
+        selectedView.isHidden = false
+        selectedLabel.text = String(index + 1)
+    }
+    
+    func unSelectedBorder() {
+        albumImageView.layer.borderWidth = 0
+        albumImageView.layer.borderColor = .none
+        selectedView.isHidden = true
+    }
+    
+    func changeIndexLabel(index: Int) {
+        selectedLabel.text = String(index + 1)
+    }
 }
