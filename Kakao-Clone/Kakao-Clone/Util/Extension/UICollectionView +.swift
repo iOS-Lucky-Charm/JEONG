@@ -1,6 +1,6 @@
 //
 //  UICollectionView +.swift
-//  Kakao-Clone
+//  MarketKurly-Clone
 //
 //  Created by KJ on 2023/03/03.
 //

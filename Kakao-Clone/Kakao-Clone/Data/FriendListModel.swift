@@ -12,6 +12,12 @@ struct FriendListModel {
     let friendName: String
     let friendStatusMessage: String
     
+//    init(friendProfile: UIImage, friendName: String, friendStatusMessage: String) {
+//        self.friendProfile = Image.friendImage1
+//        self.friendName = friendName
+//        self.frierndStatusMessage = friendStatusMessage
+//    }
+    
     public static func friendListModelDummyData() -> [FriendListModel] {
         return [
             FriendListModel(

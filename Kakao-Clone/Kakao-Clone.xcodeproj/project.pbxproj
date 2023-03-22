@@ -42,6 +42,16 @@
 		03B7D5D5299FA43B00D31B56 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B7D5D4299FA43B00D31B56 /* Image.swift */; };
 		03B7D5D9299FAEAC00D31B56 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03B7D5D8299FAEAC00D31B56 /* Color.xcassets */; };
 		03B7D5DB299FB0B200D31B56 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B7D5DA299FB0B200D31B56 /* Color.swift */; };
+		03D288D229CAE63800B292F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03D288D129CAE63800B292F3 /* GoogleService-Info.plist */; };
+		03D288D729CAEE4700B292F3 /* Encodable +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D288D629CAEE4700B292F3 /* Encodable +.swift */; };
+		03D288DA29CAF47600B292F3 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 03D288D929CAF47600B292F3 /* FirebaseFirestore */; };
+		03D288DC29CAF47600B292F3 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 03D288DB29CAF47600B292F3 /* FirebaseFirestoreSwift */; };
+		03D288E129CAF54300B292F3 /* MyFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D288E029CAF54300B292F3 /* MyFirestore.swift */; };
+		03D288E529CB011A00B292F3 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D288E429CB011A00B292F3 /* TestViewController.swift */; };
+		03D288E929CB033600B292F3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D288E829CB033600B292F3 /* Message.swift */; };
+		03D288EB29CB046700B292F3 /* FirestoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D288EA29CB046700B292F3 /* FirestoreError.swift */; };
+		03D288ED29CB267600B292F3 /* UIImageView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D288EC29CB267600B292F3 /* UIImageView +.swift */; };
+		03D288F029CB28DE00B292F3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 03D288EF29CB28DE00B292F3 /* Kingfisher */; };
 		03F38674299403DC003416AA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F38673299403DC003416AA /* SignUpViewController.swift */; };
 		03F386772994095E003416AA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F386762994095E003416AA /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +91,13 @@
 		03B7D5D4299FA43B00D31B56 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		03B7D5D8299FAEAC00D31B56 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		03B7D5DA299FB0B200D31B56 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		03D288D129CAE63800B292F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		03D288D629CAEE4700B292F3 /* Encodable +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable +.swift"; sourceTree = "<group>"; };
+		03D288E029CAF54300B292F3 /* MyFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFirestore.swift; sourceTree = "<group>"; };
+		03D288E429CB011A00B292F3 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		03D288E829CB033600B292F3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		03D288EA29CB046700B292F3 /* FirestoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreError.swift; sourceTree = "<group>"; };
+		03D288EC29CB267600B292F3 /* UIImageView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView +.swift"; sourceTree = "<group>"; };
 		03F38673299403DC003416AA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		03F386762994095E003416AA /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +109,9 @@
 			files = (
 				032B57CD29928386000678D9 /* SnapKit in Frameworks */,
 				032B57D0299283A9000678D9 /* Then in Frameworks */,
+				03D288DA29CAF47600B292F3 /* FirebaseFirestore in Frameworks */,
+				03D288DC29CAF47600B292F3 /* FirebaseFirestoreSwift in Frameworks */,
+				03D288F029CB28DE00B292F3 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,12 +176,14 @@
 		032B57B429927FE8000678D9 /* Kakao-Clone */ = {
 			isa = PBXGroup;
 			children = (
+				03D288E629CB014600B292F3 /* Test */,
 				032B57C92992832B000678D9 /* Application */,
 				037E210129B218C4005327CA /* Data */,
 				032B57CA29928351000678D9 /* Presentation */,
 				032B57D229928A46000678D9 /* Resource */,
 				032B57D129928A2C000678D9 /* Util */,
 				032B57D729929266000678D9 /* Main.storyboard */,
+				03D288D129CAE63800B292F3 /* GoogleService-Info.plist */,
 			);
 			path = "Kakao-Clone";
 			sourceTree = "<group>";
@@ -222,6 +244,8 @@
 				037E20FD29B21699005327CA /* UITableView +.swift */,
 				037E20FF29B21727005327CA /* NSObject +.swift */,
 				036C0AC629B9EAF100BC6531 /* UITabBar +.swift */,
+				03D288D629CAEE4700B292F3 /* Encodable +.swift */,
+				03D288EC29CB267600B292F3 /* UIImageView +.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -395,6 +419,17 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		03D288E629CB014600B292F3 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				03D288E029CAF54300B292F3 /* MyFirestore.swift */,
+				03D288E429CB011A00B292F3 /* TestViewController.swift */,
+				03D288E829CB033600B292F3 /* Message.swift */,
+				03D288EA29CB046700B292F3 /* FirestoreError.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		03F386712994037B003416AA /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,6 +474,9 @@
 			packageProductDependencies = (
 				032B57CC29928386000678D9 /* SnapKit */,
 				032B57CF299283A9000678D9 /* Then */,
+				03D288D929CAF47600B292F3 /* FirebaseFirestore */,
+				03D288DB29CAF47600B292F3 /* FirebaseFirestoreSwift */,
+				03D288EF29CB28DE00B292F3 /* Kingfisher */,
 			);
 			productName = "Kakao-Clone";
 			productReference = 032B57B229927FE8000678D9 /* Kakao-Clone.app */;
@@ -471,6 +509,8 @@
 			packageReferences = (
 				032B57CB29928386000678D9 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				032B57CE299283A9000678D9 /* XCRemoteSwiftPackageReference "Then" */,
+				03D288D829CAF47600B292F3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				03D288EE29CB28DE00B292F3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 032B57B329927FE8000678D9 /* Products */;
 			projectDirPath = "";
@@ -491,6 +531,7 @@
 				03B7D5D9299FAEAC00D31B56 /* Color.xcassets in Resources */,
 				032B57C229927FE9000678D9 /* LaunchScreen.storyboard in Resources */,
 				032B57BF29927FE9000678D9 /* Assets.xcassets in Resources */,
+				03D288D229CAE63800B292F3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,13 +547,17 @@
 				037E20ED29B102E5005327CA /* SharpViewController.swift in Sources */,
 				03A1C87D29A3A09400E8428B /* ProfileButton.swift in Sources */,
 				032B57BA29927FE8000678D9 /* SignInViewController.swift in Sources */,
+				03D288E129CAF54300B292F3 /* MyFirestore.swift in Sources */,
 				037E20EF29B102ED005327CA /* ShopViewController.swift in Sources */,
 				037E210029B21727005327CA /* NSObject +.swift in Sources */,
 				037E20FC29B21681005327CA /* UICollectionView +.swift in Sources */,
 				037E20F129B102F7005327CA /* SettingViewController.swift in Sources */,
 				03B7D5DB299FB0B200D31B56 /* Color.swift in Sources */,
+				03D288E929CB033600B292F3 /* Message.swift in Sources */,
 				037E20FA29B208CD005327CA /* FriendTableViewCell.swift in Sources */,
 				037E20E329B0FF50005327CA /* KakaoTabbarController.swift in Sources */,
+				03D288E529CB011A00B292F3 /* TestViewController.swift in Sources */,
+				03D288D729CAEE4700B292F3 /* Encodable +.swift in Sources */,
 				0399FAD829BB553700B09048 /* AlbumCollectionViewCell.swift in Sources */,
 				032B57D629928AA7000678D9 /* UIView +.swift in Sources */,
 				037E20EB29B102DB005327CA /* ChattingViewController.swift in Sources */,
@@ -522,6 +567,7 @@
 				032B57DA29929D2B000678D9 /* SignInTextFieldView.swift in Sources */,
 				031D5BD4299A41FA00E54F6D /* FriendViewController.swift in Sources */,
 				032B57B629927FE8000678D9 /* AppDelegate.swift in Sources */,
+				03D288EB29CB046700B292F3 /* FirestoreError.swift in Sources */,
 				037E210F29B25199005327CA /* ChattingHeaderView.swift in Sources */,
 				036C0ACA29B9F19100BC6531 /* AlbumViewController.swift in Sources */,
 				037E210D29B24C45005327CA /* ChattingTableViewCell.swift in Sources */,
@@ -529,6 +575,7 @@
 				03F386772994095E003416AA /* WelcomeViewController.swift in Sources */,
 				037E210429B21953005327CA /* FriendListModel.swift in Sources */,
 				037E20FE29B21699005327CA /* UITableView +.swift in Sources */,
+				03D288ED29CB267600B292F3 /* UIImageView +.swift in Sources */,
 				03B7D5D5299FA43B00D31B56 /* Image.swift in Sources */,
 				036C0AC729B9EAF100BC6531 /* UITabBar +.swift in Sources */,
 			);
@@ -760,6 +807,22 @@
 				kind = branch;
 			};
 		};
+		03D288D829CAF47600B292F3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		03D288EE29CB28DE00B292F3 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -772,6 +835,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 032B57CE299283A9000678D9 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		03D288D929CAF47600B292F3 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03D288D829CAF47600B292F3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		03D288DB29CAF47600B292F3 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03D288D829CAF47600B292F3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		03D288EF29CB28DE00B292F3 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03D288EE29CB28DE00B292F3 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

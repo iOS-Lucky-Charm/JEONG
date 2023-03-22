@@ -150,7 +150,6 @@ extension AlbumViewController: UICollectionViewDataSource {
         if selectedImageList.contains(indexPath.row) {
             guard let index = selectedImageList.firstIndex(of: indexPath.row) else { return }
             selectedImageList.remove(at: index)
-            cell.unSelectedBorder()
             selectedImageList.forEach {
                 let selectedCell = collectionView.cellForItem(at: [0, $0]) as! AlbumCollectionViewCell
                 guard let newIndex = selectedImageList.firstIndex(of: $0) else { return }
