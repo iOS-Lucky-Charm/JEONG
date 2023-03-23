@@ -9,6 +9,7 @@ import UIKit
 
 import SnapKit
 import Then
+import Firebase
 
 final class FriendViewController: UIViewController {
     

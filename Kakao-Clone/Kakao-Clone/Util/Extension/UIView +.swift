@@ -1,8 +1,8 @@
 //
 //  UIView +.swift
-//  Kakao-Clone
+//  MarketKurly-Clone
 //
-//  Created by KJ on 2023/02/07.
+//  Created by KJ on 2023/03/21.
 //
 
 import UIKit
