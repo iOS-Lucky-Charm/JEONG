@@ -52,6 +52,7 @@
 		03D288EB29CB046700B292F3 /* FirestoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D288EA29CB046700B292F3 /* FirestoreError.swift */; };
 		03D288ED29CB267600B292F3 /* UIImageView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D288EC29CB267600B292F3 /* UIImageView +.swift */; };
 		03D288F029CB28DE00B292F3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 03D288EF29CB28DE00B292F3 /* Kingfisher */; };
+		03D288F429CCC16F00B292F3 /* FriendListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D288F329CCC16F00B292F3 /* FriendListResponse.swift */; };
 		03F38674299403DC003416AA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F38673299403DC003416AA /* SignUpViewController.swift */; };
 		03F386772994095E003416AA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F386762994095E003416AA /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
@@ -98,6 +99,7 @@
 		03D288E829CB033600B292F3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		03D288EA29CB046700B292F3 /* FirestoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreError.swift; sourceTree = "<group>"; };
 		03D288EC29CB267600B292F3 /* UIImageView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView +.swift"; sourceTree = "<group>"; };
+		03D288F329CCC16F00B292F3 /* FriendListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListResponse.swift; sourceTree = "<group>"; };
 		03F38673299403DC003416AA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		03F386762994095E003416AA /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -339,9 +341,8 @@
 		037E210129B218C4005327CA /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				037E210329B21953005327CA /* FriendListModel.swift */,
-				037E210729B24B29005327CA /* ChattingModel.swift */,
-				0399FAD929BB577000B09048 /* AlbumModel.swift */,
+				03D288F129CCC12800B292F3 /* DTO */,
+				03D288F229CCC13100B292F3 /* Model */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -428,6 +429,24 @@
 				03D288EA29CB046700B292F3 /* FirestoreError.swift */,
 			);
 			path = Test;
+			sourceTree = "<group>";
+		};
+		03D288F129CCC12800B292F3 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				03D288F329CCC16F00B292F3 /* FriendListResponse.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		03D288F229CCC13100B292F3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				037E210329B21953005327CA /* FriendListModel.swift */,
+				037E210729B24B29005327CA /* ChattingModel.swift */,
+				0399FAD929BB577000B09048 /* AlbumModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		03F386712994037B003416AA /* SignIn */ = {
@@ -547,6 +566,7 @@
 				037E20ED29B102E5005327CA /* SharpViewController.swift in Sources */,
 				03A1C87D29A3A09400E8428B /* ProfileButton.swift in Sources */,
 				032B57BA29927FE8000678D9 /* SignInViewController.swift in Sources */,
+				03D288F429CCC16F00B292F3 /* FriendListResponse.swift in Sources */,
 				03D288E129CAF54300B292F3 /* MyFirestore.swift in Sources */,
 				037E20EF29B102ED005327CA /* ShopViewController.swift in Sources */,
 				037E210029B21727005327CA /* NSObject +.swift in Sources */,

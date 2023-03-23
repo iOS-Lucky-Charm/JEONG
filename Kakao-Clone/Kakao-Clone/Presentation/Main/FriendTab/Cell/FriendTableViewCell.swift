@@ -18,6 +18,10 @@ final class FriendTableViewCell: UITableViewCell {
     private let friendListName: UILabel = UILabel()
     private let friendListStatusMessage: UILabel = UILabel()
     
+    // MARK: - Properties
+    
+    let myFirestore = MyFirestore()
+    
     // MARK: - Initializer
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
@@ -77,9 +81,20 @@ extension FriendTableViewCell {
     // MARK: - Methods
     
     func setDataBind(model: FriendListModel) {
-        friendListProfile.image = model.friendProfile
+        let url = URL(string: model.friendProfile)
+        var image: UIImage
+        friendListProfile.image = UIImage.load(url: url!)
         friendListName.text = model.friendName
         friendListStatusMessage.text = model.friendStatusMessage
+    }
+    
+    func friendListSubscribe() {
+        myFirestore.subscribe(id: "123") { [weak self] result in
+            switch result {
+            case .success(let friensLists)
+                self?.setDataBind(model: $0.convertToFriendList())
+            }
+        }
     }
 }
 

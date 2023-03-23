@@ -19,7 +19,8 @@ final class FriendViewController: UIViewController {
     private let settingImageView: UIImageView = UIImageView()
     private let myProfileHeaderView: UITableView = UITableView()
     private let friendTableView: UITableView = UITableView(frame: .zero, style: .grouped)
-    private var friendListModel: [FriendListModel] = FriendListModel.friendListModelDummyData()
+//    private var friendListModel: [FriendListModel] = FriendListModel.friendListModelDummyData()
+    private var friendListModel: FriendListModel?
     
     // MARK: - Properties
     
@@ -106,12 +107,13 @@ extension FriendViewController {
 extension FriendViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friendListModel.count
+//        return friendListModel.count
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueCell(type: FriendTableViewCell.self, indexPath: indexPath)
-        cell.setDataBind(model:friendListModel[indexPath.row])
+//        cell.setDataBind(model:friendListModel[indexPath.row])
         return cell
     }
 }
