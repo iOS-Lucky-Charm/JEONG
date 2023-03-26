@@ -9,6 +9,9 @@ import UIKit
 
 import SnapKit
 import Then
+import Firebase
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 final class FriendTableViewCell: UITableViewCell {
     
@@ -17,10 +20,6 @@ final class FriendTableViewCell: UITableViewCell {
     private let friendListProfile: UIImageView = UIImageView()
     private let friendListName: UILabel = UILabel()
     private let friendListStatusMessage: UILabel = UILabel()
-    
-    // MARK: - Properties
-    
-    let myFirestore = MyFirestore()
     
     // MARK: - Initializer
     
@@ -81,20 +80,9 @@ extension FriendTableViewCell {
     // MARK: - Methods
     
     func setDataBind(model: FriendListModel) {
-        let url = URL(string: model.friendProfile)
-        var image: UIImage
-        friendListProfile.image = UIImage.load(url: url!)
+        friendListProfile.image = model.friendProfile
         friendListName.text = model.friendName
         friendListStatusMessage.text = model.friendStatusMessage
-    }
-    
-    func friendListSubscribe() {
-        myFirestore.subscribe(id: "123") { [weak self] result in
-            switch result {
-            case .success(let friensLists)
-                self?.setDataBind(model: $0.convertToFriendList())
-            }
-        }
     }
 }
 

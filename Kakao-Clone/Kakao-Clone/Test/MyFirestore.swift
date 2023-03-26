@@ -55,35 +55,35 @@ final class MyFirestore {
             }
     }
     
-    func friendListSubscribe(id: String, completion: @escaping (Result<[FriendListResponse], FirestoreError>) -> Void) {
-        let collectionPath = "channels/\(id)/friendList"
-        removeListener()
-        let collectionListener = Firestore.firestore().collection(collectionPath)
-        
-        documentListener = collectionListener
-            .addSnapshotListener { snapshot, error in
-                guard let snapshot = snapshot else {
-                    completion(.failure(FirestoreError.firestoreError(error)))
-                    return
-                }
-                
-                var friendLists = [FriendListResponse]()
-                snapshot.documentChanges.forEach { change in
-                    switch change.type {
-                    case .added, .modified:
-                        do {
-                            if let friendList = try change.document.data(as: FriendListResponse.self) as FriendListResponse? {
-                                friendLists.append(friendList)
-                            }
-                        } catch {
-                            completion(.failure(.decodedError(error)))
-                        }
-                    default: break
-                    }
-                }
-                completion(.success(friendLists))
-            }
-    }
+//    func friendListSubscribe(id: String, completion: @escaping (Result<[FriendListResponse], FirestoreError>) -> Void) {
+//        let collectionPath = "channels/\(id)/friendList"
+//        removeListener()
+//        let collectionListener = Firestore.firestore().collection(collectionPath)
+//        
+//        documentListener = collectionListener
+//            .addSnapshotListener { snapshot, error in
+//                guard let snapshot = snapshot else {
+//                    completion(.failure(FirestoreError.firestoreError(error)))
+//                    return
+//                }
+//                
+//                var friendLists = [FriendListResponse]()
+//                snapshot.documentChanges.forEach { change in
+//                    switch change.type {
+//                    case .added, .modified:
+//                        do {
+//                            if let friendList = try change.document.data(as: FriendListResponse.self) as FriendListResponse? {
+//                                friendLists.append(friendList)
+//                            }
+//                        } catch {
+//                            completion(.failure(.decodedError(error)))
+//                        }
+//                    default: break
+//                    }
+//                }
+//                completion(.success(friendLists))
+//            }
+//    }
     
     func removeListener() {
         documentListener?.remove()

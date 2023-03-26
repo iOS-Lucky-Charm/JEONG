@@ -19,12 +19,14 @@ final class FriendViewController: UIViewController {
     private let settingImageView: UIImageView = UIImageView()
     private let myProfileHeaderView: UITableView = UITableView()
     private let friendTableView: UITableView = UITableView(frame: .zero, style: .grouped)
-//    private var friendListModel: [FriendListModel] = FriendListModel.friendListModelDummyData()
-    private var friendListModel: FriendListModel?
+    private var friendListModel: [FriendListModel] = FriendListModel.friendListModelDummyData()
+//    private var friendListModel: FriendListModel?
     
     // MARK: - Properties
     
     var userName: String?
+    private let db = Firestore.firestore()
+    private var documentListener: ListenerRegistration?
     
     // MARK: - View Life Cycle
     
@@ -33,6 +35,7 @@ final class FriendViewController: UIViewController {
         setUI()
         setLayout()
         setDelegate()
+        fecthFriendList()
     }
 }
 
@@ -100,6 +103,18 @@ extension FriendViewController {
         myProfileVC.modalPresentationStyle = .fullScreen
         self.present(myProfileVC, animated: true)
     }
+    
+    func fecthFriendList() {
+        db.collection("member").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                }
+            }
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -107,13 +122,13 @@ extension FriendViewController {
 extension FriendViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return friendListModel.count
-        return 5
+        return friendListModel.count
+//        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueCell(type: FriendTableViewCell.self, indexPath: indexPath)
-//        cell.setDataBind(model:friendListModel[indexPath.row])
+        cell.setDataBind(model:friendListModel[indexPath.row])
         return cell
     }
 }
@@ -136,15 +151,15 @@ extension FriendViewController: UITableViewDelegate {
         return 50
     }
     
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let delete = UIContextualAction(style: .destructive, title: "삭제") {
-            (UIContextualAction, UIView, success) in
-            self.friendListModel.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            success(true)
-        }
-        delete.backgroundColor = .systemRed
-        let configuration = UISwipeActionsConfiguration(actions: [delete])
-        return configuration
-    }
+//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        let delete = UIContextualAction(style: .destructive, title: "삭제") {
+//            (UIContextualAction, UIView, success) in
+//            self.friendListModel.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//            success(true)
+//        }
+//        delete.backgroundColor = .systemRed
+//        let configuration = UISwipeActionsConfiguration(actions: [delete])
+//        return configuration
+//    }
 }
