@@ -111,6 +111,7 @@ extension FriendViewController {
             } else {
                 for document in querySnapshot!.documents {
                     print("\(document.documentID) => \(document.data())")
+
                 }
             }
         }
