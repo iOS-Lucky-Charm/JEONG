@@ -21,6 +21,7 @@
 		032B57DA29929D2B000678D9 /* SignInTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B57D929929D2B000678D9 /* SignInTextFieldView.swift */; };
 		036C0AC729B9EAF100BC6531 /* UITabBar +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036C0AC629B9EAF100BC6531 /* UITabBar +.swift */; };
 		036C0ACA29B9F19100BC6531 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036C0AC929B9F19100BC6531 /* AlbumViewController.swift */; };
+		0374571F29D5D152005A27F7 /* FriendFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0374571E29D5D152005A27F7 /* FriendFirestore.swift */; };
 		037E20E329B0FF50005327CA /* KakaoTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20E229B0FF50005327CA /* KakaoTabbarController.swift */; };
 		037E20EB29B102DB005327CA /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20EA29B102DB005327CA /* ChattingViewController.swift */; };
 		037E20ED29B102E5005327CA /* SharpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E20EC29B102E5005327CA /* SharpViewController.swift */; };
@@ -71,6 +72,7 @@
 		032B57D929929D2B000678D9 /* SignInTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTextFieldView.swift; sourceTree = "<group>"; };
 		036C0AC629B9EAF100BC6531 /* UITabBar +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar +.swift"; sourceTree = "<group>"; };
 		036C0AC929B9F19100BC6531 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
+		0374571E29D5D152005A27F7 /* FriendFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendFirestore.swift; sourceTree = "<group>"; };
 		037E20E229B0FF50005327CA /* KakaoTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoTabbarController.swift; sourceTree = "<group>"; };
 		037E20EA29B102DB005327CA /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
 		037E20EC29B102E5005327CA /* SharpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharpViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				032B57D129928A2C000678D9 /* Util */,
 				032B57D729929266000678D9 /* Main.storyboard */,
 				03D288D129CAE63800B292F3 /* GoogleService-Info.plist */,
+				0374571E29D5D152005A27F7 /* FriendFirestore.swift */,
 			);
 			path = "Kakao-Clone";
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				032B57BA29927FE8000678D9 /* SignInViewController.swift in Sources */,
 				03D288F429CCC16F00B292F3 /* FriendListResponse.swift in Sources */,
 				03D288E129CAF54300B292F3 /* MyFirestore.swift in Sources */,
+				0374571F29D5D152005A27F7 /* FriendFirestore.swift in Sources */,
 				037E20EF29B102ED005327CA /* ShopViewController.swift in Sources */,
 				037E210029B21727005327CA /* NSObject +.swift in Sources */,
 				037E20FC29B21681005327CA /* UICollectionView +.swift in Sources */,

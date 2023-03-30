@@ -30,4 +30,10 @@ struct FriendListResponse: Codable {
         friendName = try values.decode(String.self, forKey: .friendName)
         friendStatusMessage = try values.decode(String.self, forKey: .friendStatusMessage)
     }
+    
+    func convertToFriend() -> FriendListModel {
+        print(self.friendProfile)
+        print(self.friendName)
+        return FriendListModel(friendProfile: self.friendProfile, friendName: self.friendName, friendStatusMessage: self.friendStatusMessage)
+    }
 }

@@ -12,6 +12,7 @@ import Then
 import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import Kingfisher
 
 final class FriendTableViewCell: UITableViewCell {
     
@@ -80,7 +81,8 @@ extension FriendTableViewCell {
     // MARK: - Methods
     
     func setDataBind(model: FriendListModel) {
-        friendListProfile.image = model.friendProfile
+        guard let url = URL(string: model.friendProfile) else { return }
+        friendListProfile.kf.setImage(with: url)
         friendListName.text = model.friendName
         friendListStatusMessage.text = model.friendStatusMessage
     }

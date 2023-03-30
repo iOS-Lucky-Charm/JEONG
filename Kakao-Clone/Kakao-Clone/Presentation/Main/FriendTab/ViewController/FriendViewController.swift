@@ -19,8 +19,8 @@ final class FriendViewController: UIViewController {
     private let settingImageView: UIImageView = UIImageView()
     private let myProfileHeaderView: UITableView = UITableView()
     private let friendTableView: UITableView = UITableView(frame: .zero, style: .grouped)
-    private var friendListModel: [FriendListModel] = FriendListModel.friendListModelDummyData()
-//    private var friendListModel: FriendListModel?
+//    private var friendListModel: [FriendListModel] = FriendListModel.friendListModelDummyData()
+    private var friendList: [FriendListModel] = []
     
     // MARK: - Properties
     
@@ -35,7 +35,6 @@ final class FriendViewController: UIViewController {
         setUI()
         setLayout()
         setDelegate()
-        fecthFriendList()
     }
 }
 
@@ -104,17 +103,63 @@ extension FriendViewController {
         self.present(myProfileVC, animated: true)
     }
     
-    func fecthFriendList() {
-        db.collection("member").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
-
-                }
-            }
-        }
+//    func fecthFriendList(completion: @escaping (Result <[FriendListResponse], FirestoreError>) -> Void) {
+//        let collectionListener = db.collection("member")
+//        documentListener = collectionListener.addSnapshotListener { snapshot, error in
+//            guard let snapshot = snapshot else {
+//                print("firestore error")
+//                return
+//            }
+//            var friendList = [FriendListResponse]()
+//            snapshot.documentChanges.forEach { change in
+//                switch change.type {
+//                case .added, .modified:
+//                    do {
+//                        if let list = try change.document.data(as: FriendListResponse.self) as FriendListResponse? {
+//                            friendList.append(list)
+//                            print(friendList)
+//                        }
+//                    } catch {
+//                        print("catch error")
+//                    }
+//                default: break
+//                }
+//            }
+//        }
+//    }
+//        db.collection("member").getDocuments() { (querySnapshot, err) in
+//            if let err = err {
+//                print("Error getting documents: \(err)")
+//            }
+//            else {
+//                snapshot.documentChanges.forEach { change in
+//                    switch change.type {
+//                    case .added, .modified:
+//                        do {
+//                            if let list = try document.data(as: FriendListResponse.self) as FriendListResponse? {
+//                                friendList.append(list)
+//                            }
+//                        } catch {
+//                            print("catch error")
+//                        }
+//                    default: break
+//                    }
+//                }
+//                for document in querySnapshot!.documents {
+//                    do {
+//                        if let list = try document.data(as: FriendListResponse.self) as FriendListResponse? {
+//                            friendList.append(list)
+//                        }
+//                    } catch {
+//                        print("error")
+//                    }
+//                    print("\(document.documentID) => \(document.data())")
+//                }
+//            }
+//        }
+    
+    func fetchFirestore() {
+        
     }
 }
 
@@ -123,13 +168,13 @@ extension FriendViewController {
 extension FriendViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friendListModel.count
+        return friendList.count
 //        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueCell(type: FriendTableViewCell.self, indexPath: indexPath)
-        cell.setDataBind(model:friendListModel[indexPath.row])
+        cell.setDataBind(model:friendList[indexPath.row])
         return cell
     }
 }
