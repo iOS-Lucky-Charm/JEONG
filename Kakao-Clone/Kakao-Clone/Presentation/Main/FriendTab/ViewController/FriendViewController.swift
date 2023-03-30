@@ -25,8 +25,9 @@ final class FriendViewController: UIViewController {
     // MARK: - Properties
     
     var userName: String?
-    private let db = Firestore.firestore()
-    private var documentListener: ListenerRegistration?
+//    private let db = Firestore.firestore()
+//    private var documentListener: ListenerRegistration?
+    let friendFriestore = FriendFirestore()
     
     // MARK: - View Life Cycle
     
@@ -35,6 +36,7 @@ final class FriendViewController: UIViewController {
         setUI()
         setLayout()
         setDelegate()
+        fetchFirestore()
     }
 }
 
@@ -159,7 +161,16 @@ extension FriendViewController {
 //        }
     
     func fetchFirestore() {
-        
+        friendFriestore.fecthFriendList(id: "123") { [weak self] result in
+            switch result {
+            case .success(let list):
+                list.forEach {
+                    print($0.friendName)
+                }
+            case .failure(let error):
+                print("fetchFirestore error")
+            }
+        }
     }
 }
 

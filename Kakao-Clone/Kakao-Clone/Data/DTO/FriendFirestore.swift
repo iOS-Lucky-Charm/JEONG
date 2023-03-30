@@ -11,13 +11,14 @@ import FirebaseFirestoreSwift
 final class FriendFirestore {
     
     private var documentListener: ListenerRegistration?
-    private let db = Firestore.firestore()
     
-    func fecthFriendList(completion: @escaping (Result <[FriendListResponse], FirestoreError>) -> Void) {
-        let collectionListener = db.collection("member")
+    func fecthFriendList(id: String, completion: @escaping (Result <[FriendListResponse], FirestoreError>) -> Void) {
+//        removeListener()
+        let collectionListener = Firestore.firestore().collection("member")
         documentListener = collectionListener.addSnapshotListener { snapshot, error in
             guard let snapshot = snapshot else {
-                print("firestore error")
+//                print("firestore error")
+                completion(.failure(FirestoreError.firestoreError(error)))
                 return
             }
             var friendList = [FriendListResponse]()
@@ -30,11 +31,13 @@ final class FriendFirestore {
                             print(friendList)
                         }
                     } catch {
-                        print("catch error")
+//                        print("catch error")
+                        completion(.failure(.decodedError(error)))
                     }
                 default: break
                 }
             }
+            completion(.success(friendList))
         }
     }
 }
