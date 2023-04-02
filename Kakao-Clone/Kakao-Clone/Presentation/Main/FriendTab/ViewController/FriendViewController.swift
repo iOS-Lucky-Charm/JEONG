@@ -10,6 +10,8 @@ import UIKit
 import SnapKit
 import Then
 import Firebase
+import FirebaseCore
+import FirebaseFirestore
 
 final class FriendViewController: UIViewController {
     
@@ -25,9 +27,8 @@ final class FriendViewController: UIViewController {
     // MARK: - Properties
     
     var userName: String?
-//    private let db = Firestore.firestore()
-//    private var documentListener: ListenerRegistration?
-    let friendFriestore = FriendFirestore()
+//    let friendFriestore = FriendFirestore()
+    let db = Firestore.firestore()
     
     // MARK: - View Life Cycle
     
@@ -36,7 +37,7 @@ final class FriendViewController: UIViewController {
         setUI()
         setLayout()
         setDelegate()
-        fetchFirestore()
+        firestore()
     }
 }
 
@@ -105,70 +106,28 @@ extension FriendViewController {
         self.present(myProfileVC, animated: true)
     }
     
-//    func fecthFriendList(completion: @escaping (Result <[FriendListResponse], FirestoreError>) -> Void) {
-//        let collectionListener = db.collection("member")
-//        documentListener = collectionListener.addSnapshotListener { snapshot, error in
-//            guard let snapshot = snapshot else {
-//                print("firestore error")
-//                return
-//            }
-//            var friendList = [FriendListResponse]()
-//            snapshot.documentChanges.forEach { change in
-//                switch change.type {
-//                case .added, .modified:
-//                    do {
-//                        if let list = try change.document.data(as: FriendListResponse.self) as FriendListResponse? {
-//                            friendList.append(list)
-//                            print(friendList)
-//                        }
-//                    } catch {
-//                        print("catch error")
+    func firestore() {
+        db.collection("member").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+//                    let imageUrl = document.data()["name"] as? String ?? ""
+//                    print(imageUrl)
+//                    self.friendList.append(document.data().convertToFriendList())
+//                    if let item = data["item"] as? String {
+//                        self.friendList.append(item)
 //                    }
-//                default: break
-//                }
-//            }
-//        }
-//    }
-//        db.collection("member").getDocuments() { (querySnapshot, err) in
-//            if let err = err {
-//                print("Error getting documents: \(err)")
-//            }
-//            else {
-//                snapshot.documentChanges.forEach { change in
-//                    switch change.type {
-//                    case .added, .modified:
-//                        do {
-//                            if let list = try document.data(as: FriendListResponse.self) as FriendListResponse? {
-//                                friendList.append(list)
-//                            }
-//                        } catch {
-//                            print("catch error")
-//                        }
-//                    default: break
-//                    }
-//                }
-//                for document in querySnapshot!.documents {
-//                    do {
-//                        if let list = try document.data(as: FriendListResponse.self) as FriendListResponse? {
-//                            friendList.append(list)
-//                        }
-//                    } catch {
-//                        print("error")
-//                    }
+//                    self.friendList.append(data.convertToFriendList())
+                    let data = document.data()
+                    let profile = data["imageURL"] as? String ?? ""
+                    let message = data["message"] as? String ?? ""
+                    let name = data["name"] as? String ?? ""
+                    let list = FriendListResponse(friendProfile: profile, friendName: name, friendStatusMessage: message)
+                    self.friendList.append(list.convertToFriendList())
 //                    print("\(document.documentID) => \(document.data())")
-//                }
-//            }
-//        }
-    
-    func fetchFirestore() {
-        friendFriestore.fecthFriendList(id: "123") { [weak self] result in
-            switch result {
-            case .success(let list):
-                list.forEach {
-                    print($0.friendName)
                 }
-            case .failure(let error):
-                print("fetchFirestore error")
+                print(self.friendList)
             }
         }
     }
