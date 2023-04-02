@@ -34,10 +34,10 @@ final class FriendViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        firestore()
         setUI()
         setLayout()
         setDelegate()
-        firestore()
     }
 }
 
@@ -123,11 +123,14 @@ extension FriendViewController {
                     let profile = data["imageURL"] as? String ?? ""
                     let message = data["message"] as? String ?? ""
                     let name = data["name"] as? String ?? ""
-                    let list = FriendListResponse(friendProfile: profile, friendName: name, friendStatusMessage: message)
-                    self.friendList.append(list.convertToFriendList())
+//                    let list = FriendListResponse(friendProfile: profile, friendName: name, friendStatusMessage: message)
+//                    self.friendList.append(list.convertToFriendList())
+                    let list = FriendListModel(friendProfile: profile, friendName: name, friendStatusMessage: message)
+                    self.friendList.append(list)
 //                    print("\(document.documentID) => \(document.data())")
                 }
                 print(self.friendList)
+                self.friendTableView.reloadData()
             }
         }
     }
@@ -138,8 +141,8 @@ extension FriendViewController {
 extension FriendViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friendList.count
-//        return 5
+        return self.friendList.count
+//        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -167,15 +170,15 @@ extension FriendViewController: UITableViewDelegate {
         return 50
     }
     
-//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        let delete = UIContextualAction(style: .destructive, title: "삭제") {
-//            (UIContextualAction, UIView, success) in
-//            self.friendListModel.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//            success(true)
-//        }
-//        delete.backgroundColor = .systemRed
-//        let configuration = UISwipeActionsConfiguration(actions: [delete])
-//        return configuration
-//    }
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "삭제") {
+            (UIContextualAction, UIView, success) in
+            self.friendList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            success(true)
+        }
+        delete.backgroundColor = .systemRed
+        let configuration = UISwipeActionsConfiguration(actions: [delete])
+        return configuration
+    }
 }

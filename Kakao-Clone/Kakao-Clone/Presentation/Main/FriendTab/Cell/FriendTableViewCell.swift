@@ -87,4 +87,3 @@ extension FriendTableViewCell {
         friendListStatusMessage.text = model.friendStatusMessage
     }
 }
-
