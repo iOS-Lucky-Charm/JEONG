@@ -11,19 +11,6 @@ import FirebaseFirestoreSwift
 final class MyFirestore {
     
     private var documentListener: ListenerRegistration?
-    
-//    func save(_ message: Message, completion: ((Error?) -> Void)? = nil) {
-//        let collectionPath = "channels/\(message.id)/member"
-//        let collectionListener = Firestore.firestore().collection(collectionPath)
-//        
-//        guard let dictionary = message.asDictionary else {
-//            print("decode error")
-//            return
-//        }
-//        collectionListener.addDocument(data: dictionary) { error in
-//            completion?(error)
-//        }
-//    }
 
     func subscribe(id: String, completion: @escaping (Result<[Message], FirestoreError>) -> Void) {
         let collectionPath = "channels/\(id)/member"

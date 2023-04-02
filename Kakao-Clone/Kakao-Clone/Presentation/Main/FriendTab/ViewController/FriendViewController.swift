@@ -10,6 +10,8 @@ import UIKit
 import SnapKit
 import Then
 import Firebase
+import FirebaseCore
+import FirebaseFirestore
 
 final class FriendViewController: UIViewController {
     
@@ -19,16 +21,20 @@ final class FriendViewController: UIViewController {
     private let settingImageView: UIImageView = UIImageView()
     private let myProfileHeaderView: UITableView = UITableView()
     private let friendTableView: UITableView = UITableView(frame: .zero, style: .grouped)
-    private var friendListModel: [FriendListModel] = FriendListModel.friendListModelDummyData()
+//    private var friendListModel: [FriendListModel] = FriendListModel.friendListModelDummyData()
+    private var friendList: [FriendListModel] = []
     
     // MARK: - Properties
     
     var userName: String?
+//    let friendFriestore = FriendFirestore()
+    let db = Firestore.firestore()
     
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        firestore()
         setUI()
         setLayout()
         setDelegate()
@@ -99,6 +105,35 @@ extension FriendViewController {
         myProfileVC.modalPresentationStyle = .fullScreen
         self.present(myProfileVC, animated: true)
     }
+    
+    func firestore() {
+        db.collection("member").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+//                    let imageUrl = document.data()["name"] as? String ?? ""
+//                    print(imageUrl)
+//                    self.friendList.append(document.data().convertToFriendList())
+//                    if let item = data["item"] as? String {
+//                        self.friendList.append(item)
+//                    }
+//                    self.friendList.append(data.convertToFriendList())
+                    let data = document.data()
+                    let profile = data["imageURL"] as? String ?? ""
+                    let message = data["message"] as? String ?? ""
+                    let name = data["name"] as? String ?? ""
+//                    let list = FriendListResponse(friendProfile: profile, friendName: name, friendStatusMessage: message)
+//                    self.friendList.append(list.convertToFriendList())
+                    let list = FriendListModel(friendProfile: profile, friendName: name, friendStatusMessage: message)
+                    self.friendList.append(list)
+//                    print("\(document.documentID) => \(document.data())")
+                }
+                print(self.friendList)
+                self.friendTableView.reloadData()
+            }
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -106,12 +141,13 @@ extension FriendViewController {
 extension FriendViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friendListModel.count
+        return self.friendList.count
+//        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueCell(type: FriendTableViewCell.self, indexPath: indexPath)
-        cell.setDataBind(model:friendListModel[indexPath.row])
+        cell.setDataBind(model:friendList[indexPath.row])
         return cell
     }
 }
@@ -137,7 +173,7 @@ extension FriendViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .destructive, title: "삭제") {
             (UIContextualAction, UIView, success) in
-            self.friendListModel.remove(at: indexPath.row)
+            self.friendList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             success(true)
         }
