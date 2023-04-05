@@ -21,13 +21,11 @@ final class FriendViewController: UIViewController {
     private let settingImageView: UIImageView = UIImageView()
     private let myProfileHeaderView: UITableView = UITableView()
     private let friendTableView: UITableView = UITableView(frame: .zero, style: .grouped)
-//    private var friendListModel: [FriendListModel] = FriendListModel.friendListModelDummyData()
     private var friendList: [FriendListModel] = []
     
     // MARK: - Properties
     
     var userName: String?
-//    let friendFriestore = FriendFirestore()
     let db = Firestore.firestore()
     
     // MARK: - View Life Cycle
@@ -112,22 +110,13 @@ extension FriendViewController {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-//                    let imageUrl = document.data()["name"] as? String ?? ""
-//                    print(imageUrl)
-//                    self.friendList.append(document.data().convertToFriendList())
-//                    if let item = data["item"] as? String {
-//                        self.friendList.append(item)
-//                    }
-//                    self.friendList.append(data.convertToFriendList())
                     let data = document.data()
                     let profile = data["imageURL"] as? String ?? ""
                     let message = data["message"] as? String ?? ""
                     let name = data["name"] as? String ?? ""
-//                    let list = FriendListResponse(friendProfile: profile, friendName: name, friendStatusMessage: message)
-//                    self.friendList.append(list.convertToFriendList())
                     let list = FriendListModel(friendProfile: profile, friendName: name, friendStatusMessage: message)
                     self.friendList.append(list)
-//                    print("\(document.documentID) => \(document.data())")
+//                    self.friendList = document.compactMap { FriendListResponse(document: $0)}
                 }
                 print(self.friendList)
                 self.friendTableView.reloadData()
@@ -142,7 +131,6 @@ extension FriendViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.friendList.count
-//        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -81,7 +81,6 @@ extension WelcomeViewController {
     }
     
     private func moveToFriendVC() {
-//        let mainVC = FriendViewController()
         let mainVC = KakaoTabbarController()
         let navigationController = UINavigationController(rootViewController: mainVC)
         let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate

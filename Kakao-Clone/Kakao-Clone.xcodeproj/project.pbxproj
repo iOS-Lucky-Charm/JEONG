@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0308B20029D9B0E8009E50E1 /* GeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0308B1FF29D9B0E8009E50E1 /* GeneralResponse.swift */; };
 		031D5BD4299A41FA00E54F6D /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031D5BD3299A41FA00E54F6D /* FriendViewController.swift */; };
 		031D5BD6299A424100E54F6D /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031D5BD5299A424100E54F6D /* MyProfileViewController.swift */; };
 		032B57B629927FE8000678D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B57B529927FE8000678D9 /* AppDelegate.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0308B1FF29D9B0E8009E50E1 /* GeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralResponse.swift; sourceTree = "<group>"; };
 		031D5BD3299A41FA00E54F6D /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
 		031D5BD5299A424100E54F6D /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		032B57B229927FE8000678D9 /* Kakao-Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kakao-Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +122,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0308B1FD29D9B0C6009E50E1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0308B1FE29D9B0D3009E50E1 /* Foundation */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		0308B1FE29D9B0D3009E50E1 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				0308B1FF29D9B0E8009E50E1 /* GeneralResponse.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
 		031D5BCF299A39B500E54F6D /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +199,7 @@
 				03D288E629CB014600B292F3 /* Test */,
 				032B57C92992832B000678D9 /* Application */,
 				037E210129B218C4005327CA /* Data */,
+				0308B1FD29D9B0C6009E50E1 /* Network */,
 				032B57CA29928351000678D9 /* Presentation */,
 				032B57D229928A46000678D9 /* Resource */,
 				032B57D129928A2C000678D9 /* Util */,
@@ -570,6 +589,7 @@
 				03D288E129CAF54300B292F3 /* MyFirestore.swift in Sources */,
 				037E20EF29B102ED005327CA /* ShopViewController.swift in Sources */,
 				037E210029B21727005327CA /* NSObject +.swift in Sources */,
+				0308B20029D9B0E8009E50E1 /* GeneralResponse.swift in Sources */,
 				037E20FC29B21681005327CA /* UICollectionView +.swift in Sources */,
 				037E20F129B102F7005327CA /* SettingViewController.swift in Sources */,
 				03B7D5DB299FB0B200D31B56 /* Color.swift in Sources */,
